@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,13 +11,66 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(300),
+            preferredSize: const Size.fromHeight(300),
             child: AppBar(
-              title: Text("WELCOME"),
+              toolbarHeight: 260,
+              title: title(context),
+              bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(60),
+                  child: Container(
+                    height: 60,
+                    padding: EdgeInsets.all(2.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(2),
+                          child: Text(
+                            "Home",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(2),
+                          child: Text(
+                            "Invoice",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(2),
+                          child: Text(
+                            "Profile",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+              centerTitle: false,
               flexibleSpace: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -27,6 +81,88 @@ class _HomePage extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget title(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(120)),
+            ),
+            child: ClipOval(
+              child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKWxIwmVa8QmOHFoD75qJuEJh4O6dVc7-utA&usqp=CAU',
+                height: 48,
+                width: 48,
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(2),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "WELCOME",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge!
+                        .copyWith(color: Colors.white),
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.white,
+                      backgroundImage: Image.network(
+                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+                        height: 20,
+                        width: 20,
+                      ).image,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(2),
+              child: Text(
+                "Ankush Hegde",
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.white),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(2),
+              child: Text(
+                "ankush@gmail.com",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
