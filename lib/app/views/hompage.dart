@@ -37,7 +37,7 @@ class _HomePage extends State<HomePage> {
                                 .titleMedium!
                                 .copyWith(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.normal,
                                     fontSize: 17),
                           ),
                         ),
@@ -50,7 +50,7 @@ class _HomePage extends State<HomePage> {
                                 .titleMedium!
                                 .copyWith(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.normal,
                                     fontSize: 17),
                           ),
                         ),
@@ -63,7 +63,7 @@ class _HomePage extends State<HomePage> {
                                 .titleMedium!
                                 .copyWith(
                                     color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.normal,
                                     fontSize: 17),
                           ),
                         ),
@@ -118,17 +118,17 @@ class _HomePage extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "WELCOME",
+                    "Welcome",
                     style: Theme.of(context)
                         .textTheme
                         .headlineLarge!
-                        .copyWith(color: Colors.white),
+                        .copyWith(color: Colors.white,fontSize: 48),
                   ),
                   CircleAvatar(
-                    radius: 45,
+                    radius: 30,
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
-                      radius: 40,
+                      radius: 25,
                       backgroundColor: Colors.white,
                       backgroundImage: Image.network(
                         'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
@@ -147,7 +147,7 @@ class _HomePage extends State<HomePage> {
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!
-                    .copyWith(color: Colors.white),
+                    .copyWith(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -157,9 +157,19 @@ class _HomePage extends State<HomePage> {
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge!
-                    .copyWith(color: Colors.white),
+                    .copyWith(color: Colors.white,fontSize: 15,fontWeight: FontWeight.normal),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(2),
+              child: Text(
+                "123456789",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: Colors.white,fontSize: 15,fontWeight: FontWeight.normal),
+              ),
+            )
           ],
         ),
       ],
