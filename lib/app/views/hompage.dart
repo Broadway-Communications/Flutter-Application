@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +10,6 @@ class HomePage extends StatefulWidget {
 class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return MaterialApp(
       home: SafeArea(
         child: Scaffold(
@@ -21,10 +19,10 @@ class _HomePage extends State<HomePage> {
               toolbarHeight: 260,
               title: title(context),
               bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(60),
+                  preferredSize: const Size.fromHeight(60),
                   child: Container(
                     height: 60,
-                    padding: EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(2.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
