@@ -1,6 +1,9 @@
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
+@RoutePage()
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -12,72 +15,69 @@ class _HomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(300),
-            child: AppBar(
-              toolbarHeight: 260,
-              title: title(context),
-              bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(60),
-                  child: Container(
-                    height: 60,
-                    padding: EdgeInsets.all(2.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: Text(
-                            "Home",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: Text(
-                            "Invoice",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: Text(
-                            "Profile",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17),
-                          ),
-                        ),
-                      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        toolbarHeight: 260,
+        title: title(context),
+        bottom: PreferredSize(
+            preferredSize: Size.fromHeight(60),
+            child: Container(
+              height: 60,
+              padding: EdgeInsets.all(2.0),
+              child: InkWell(
+                onTap: () => context.router.pushNamed("/invoicePage"),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Home",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
                     ),
-                  )),
-              centerTitle: false,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/appbar.jpg'), fit: BoxFit.fill),
+                    Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Invoice",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Profile",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
+            )),
+        centerTitle: false,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/appbar.jpg'), fit: BoxFit.fill),
           ),
         ),
       ),
