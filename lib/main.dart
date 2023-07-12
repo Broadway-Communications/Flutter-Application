@@ -2,7 +2,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unicorn/app/router.dart';
-import 'package:unicorn/app/views/hompage.dart';
 
 void main() {
   // WidgetsFlutterBinding.ensureInitialized();

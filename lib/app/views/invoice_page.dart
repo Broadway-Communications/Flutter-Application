@@ -2,14 +2,14 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class invoicePage extends StatefulWidget {
-  const invoicePage({super.key});
+class InvoicePage extends StatefulWidget {
+  const InvoicePage({super.key});
 
   @override
-  State<invoicePage> createState() => _invoicePageState();
+  State<InvoicePage> createState() => _InvoicePageState();
 }
 
-class _invoicePageState extends State<invoicePage> {
+class _InvoicePageState extends State<InvoicePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
