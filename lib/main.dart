@@ -15,13 +15,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
+  MyApp({
     super.key,
   });
+  static final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
     return MaterialApp.router(
       locale: DevicePreview.locale(context),
       builder: (context, router) => router!,
