@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -36,11 +34,11 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 241, 241, 241),
+                      color: const Color.fromARGB(255, 241, 241, 241),
                       borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.grey,
                           offset: Offset(0, 5),
@@ -54,24 +52,24 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             width: size.width * 0.14,
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Icon(Icons.sim_card,
                                   color: Color.fromARGB(255, 5, 62, 112),
                                   size: 34),
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
+                        const Padding(
+                          padding: EdgeInsets.all(12.0),
                           child: Text(
                             'Change Plan',
                             style: TextStyle(
-                              color: const Color.fromARGB(255, 7, 110, 158),
+                              color: Color.fromARGB(255, 7, 110, 158),
                               fontWeight: FontWeight.w500,
                             ),
                           ),

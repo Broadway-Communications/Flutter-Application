@@ -7,15 +7,15 @@ import 'package:responsive_framework/responsive_framework.dart';
 void main() {
   runApp(DevicePreview(
     enabled: false,
-    builder: (context) => MyApp(),
+    builder: (context) => const MyApp(),
   ));
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   static final _appRouter = AppRouter();
 
@@ -30,11 +30,11 @@ class MyApp extends StatelessWidget {
           minWidth: 450,
           defaultScale: true,
           breakpoints: [
-            ResponsiveBreakpoint.resize(450, name: MOBILE),
-            ResponsiveBreakpoint.resize(800, name: TABLET),
-            ResponsiveBreakpoint.resize(1000, name: TABLET),
-            ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-            ResponsiveBreakpoint.resize(2460, name: "4K"),
+            const ResponsiveBreakpoint.resize(450, name: MOBILE),
+            const ResponsiveBreakpoint.resize(800, name: TABLET),
+            const ResponsiveBreakpoint.resize(1000, name: TABLET),
+            const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+            const ResponsiveBreakpoint.resize(2460, name: "4K"),
           ],
         );
       },

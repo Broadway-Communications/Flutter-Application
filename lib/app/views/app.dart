@@ -26,7 +26,7 @@ class _InitialPageState extends State<InitialPage>
     final size = MediaQuery.of(context).size;
 
     return AutoTabsRouter.tabBar(
-      routes: [
+      routes: const [
         HomeRoute(),
         InvoiceRoute(),
         ProfileRoute(),
@@ -83,7 +83,7 @@ class _InitialPageState extends State<InitialPage>
               },
               indicatorColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.tab,
-              indicatorPadding: EdgeInsets.all(4),
+              indicatorPadding: const EdgeInsets.all(4),
             ),
             centerTitle: false,
             flexibleSpace: Container(

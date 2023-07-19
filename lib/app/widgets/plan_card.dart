@@ -76,9 +76,9 @@ class _PlanCardState extends State<PlanCard> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Column(children: [
-                  Icon(
+                  const Icon(
                     Icons.sim_card,
                     color: Colors.blue,
                     size: 45,
@@ -96,7 +96,7 @@ class _PlanCardState extends State<PlanCard> {
                   backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
-              child: Text(
+              child: const Text(
                 "Renew",
                 style: TextStyle(
                     color: Colors.white,
