@@ -1,8 +1,13 @@
+import 'dart:js';
+
 import 'package:auto_route/auto_route.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorn/app/widgets/plan_card.dart';
 
 @RoutePage()
+
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,6 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
     final size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       physics:
@@ -82,3 +88,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+

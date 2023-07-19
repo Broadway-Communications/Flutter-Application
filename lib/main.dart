@@ -2,29 +2,42 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unicorn/app/router.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-
   runApp(DevicePreview(
-    builder: (context) => MyApp(),
     enabled: false,
+    builder: (context) => MyApp(),
   ));
-  SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({
-    super.key,
-  });
+  MyApp({Key? key}) : super(key: key);
+
   static final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       locale: DevicePreview.locale(context),
-      builder: (context, router) => router!,
+      builder: (context, router) {
+        return ResponsiveWrapper.builder(
+          BouncingScrollWrapper.builder(context, router!),
+          maxWidth: 1200,
+          minWidth: 450,
+          defaultScale: true,
+          breakpoints: [
+            ResponsiveBreakpoint.resize(450, name: MOBILE),
+            ResponsiveBreakpoint.resize(800, name: TABLET),
+            ResponsiveBreakpoint.resize(1000, name: TABLET),
+            ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+            ResponsiveBreakpoint.resize(2460, name: "4K"),
+          ],
+        );
+      },
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -35,3 +48,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
