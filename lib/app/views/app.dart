@@ -34,7 +34,9 @@ class _InitialPageState extends State<InitialPage>
       builder: (context, child, controller) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
-          appBar: AppBar(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(280),
+            child: AppBar(
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             toolbarHeight: 260,
             title: title(context),
@@ -46,7 +48,10 @@ class _InitialPageState extends State<InitialPage>
                     padding: const EdgeInsets.all(2),
                     child: Text(
                       "Home",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
@@ -58,7 +63,10 @@ class _InitialPageState extends State<InitialPage>
                     padding: const EdgeInsets.all(2),
                     child: Text(
                       "Invoice",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
@@ -70,7 +78,10 @@ class _InitialPageState extends State<InitialPage>
                     padding: const EdgeInsets.all(2),
                     child: Text(
                       "Profile",
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
@@ -83,7 +94,7 @@ class _InitialPageState extends State<InitialPage>
               },
               indicatorColor: Colors.white,
               indicatorSize: TabBarIndicatorSize.tab,
-              indicatorPadding: const EdgeInsets.all(4),
+                indicatorPadding: EdgeInsets.all(4),
             ),
             centerTitle: false,
             flexibleSpace: Container(
@@ -93,9 +104,15 @@ class _InitialPageState extends State<InitialPage>
               ),
             ),
           ),
-          body: GestureDetector(
-              child: child,
-              onHorizontalDragEnd: (details) {
+          ),
+          body: GestureDetector(child: Builder(
+            builder: (context) {
+              if (mounted) {
+                return child;
+              }
+              return Container();
+            },
+          ), onHorizontalDragEnd: (details) {
                 if (details.primaryVelocity! > 0) {
                   controller.animateTo(controller.index - 1);
                 } else if (details.primaryVelocity! < 0) {

@@ -6,7 +6,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 void main() {
   runApp(DevicePreview(
-    enabled: false,
+    enabled: true,
     builder: (context) => const MyApp(),
   ));
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -48,4 +48,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
