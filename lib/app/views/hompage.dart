@@ -121,7 +121,7 @@ class _HomePage extends State<HomePage> {
                     style: Theme.of(context)
                         .textTheme
                         .headlineLarge!
-                        .copyWith(color: Colors.white,fontSize: 48),
+                        .copyWith(color: Colors.white, fontSize: 48),
                   ),
                   CircleAvatar(
                     radius: 30,
@@ -143,30 +143,30 @@ class _HomePage extends State<HomePage> {
               padding: const EdgeInsets.all(2),
               child: Text(
                 "Ankush Hegde",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineSmall!
-                    .copyWith(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(2),
               child: Text(
                 "ankush@gmail.com",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(color: Colors.white,fontSize: 15,fontWeight: FontWeight.normal),
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal),
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(2),
               child: Text(
                 "123456789",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(color: Colors.white,fontSize: 15,fontWeight: FontWeight.normal),
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal),
               ),
             )
           ],

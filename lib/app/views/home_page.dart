@@ -52,11 +52,9 @@ class _HomePageState extends State<HomePage> {
                   IconCard(
                       size: size,
                       icon: Icons.account_balance_wallet,
-                      text: 'Change Plan'),
+                      text: 'Wallet'),
                   IconCard(
-                      size: size,
-                      icon: Icons.ramen_dining,
-                      text: 'Change Plan'),
+                      size: size, icon: Icons.ramen_dining, text: 'Plan Info'),
                 ],
               ),
             ),

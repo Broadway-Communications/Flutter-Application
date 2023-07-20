@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:unicorn/app/router.dart';
 
@@ -37,73 +37,73 @@ class _InitialPageState extends State<InitialPage>
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(280),
             child: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            toolbarHeight: 260,
-            title: title(context),
-            bottom: TabBar(
-              controller: controller,
-              tabs: [
-                Tab(
-                  child: Padding(
-                    padding: const EdgeInsets.all(2),
-                    child: Text(
-                      "Home",
+              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              toolbarHeight: 260,
+              title: title(context),
+              bottom: TabBar(
+                controller: controller,
+                tabs: [
+                  Tab(
+                    child: Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Home",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
                     ),
                   ),
-                ),
-                Tab(
-                  child: Padding(
-                    padding: const EdgeInsets.all(2),
-                    child: Text(
-                      "Invoice",
+                  Tab(
+                    child: Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Invoice",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
                     ),
                   ),
-                ),
-                Tab(
-                  child: Padding(
-                    padding: const EdgeInsets.all(2),
-                    child: Text(
-                      "Profile",
+                  Tab(
+                    child: Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Text(
+                        "Profile",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                      ),
                     ),
                   ),
-                ),
-              ],
-              onTap: (index) {
-                tabsRouter.setActiveIndex(index);
-              },
-              indicatorColor: Colors.white,
-              indicatorSize: TabBarIndicatorSize.tab,
+                ],
+                onTap: (index) {
+                  tabsRouter.setActiveIndex(index);
+                },
+                indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.tab,
                 indicatorPadding: EdgeInsets.all(4),
-            ),
-            centerTitle: false,
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/appbar.jpg'), fit: BoxFit.fill),
+              ),
+              centerTitle: false,
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/appbar.jpg'), fit: BoxFit.fill),
+                ),
               ),
             ),
-          ),
           ),
           body: GestureDetector(child: Builder(
             builder: (context) {
@@ -113,12 +113,12 @@ class _InitialPageState extends State<InitialPage>
               return Container();
             },
           ), onHorizontalDragEnd: (details) {
-                if (details.primaryVelocity! > 0) {
-                  controller.animateTo(controller.index - 1);
-                } else if (details.primaryVelocity! < 0) {
-                  controller.animateTo(controller.index + 1);
-                }
-              }),
+            if (details.primaryVelocity! > 0) {
+              controller.animateTo(controller.index - 1);
+            } else if (details.primaryVelocity! < 0) {
+              controller.animateTo(controller.index + 1);
+            }
+          }),
         );
       },
     );

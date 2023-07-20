@@ -15,9 +15,11 @@ class IconCard extends StatefulWidget {
 class _IconCardState extends State<IconCard> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.all(12.0),
       child: Container(
+        width: size.width * 0.28,
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 241, 241, 241),
