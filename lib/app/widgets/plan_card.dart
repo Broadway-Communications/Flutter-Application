@@ -19,7 +19,7 @@ class _PlanCardState extends State<PlanCard> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withAlpha(255),
+              color: const Color.fromARGB(255, 195, 195, 195).withAlpha(255),
               spreadRadius: 1,
               blurRadius: 1,
               offset: const Offset(0, 3),
@@ -41,12 +41,12 @@ class _PlanCardState extends State<PlanCard> {
                   text: '12 Nov 2021 03:28\n',
                   style: theme.textTheme.titleLarge!.copyWith(fontSize: 24),
                   children: [
-                    WidgetSpan(
+                    const WidgetSpan(
                         child: SizedBox(
                       height: 25,
                     )),
                     TextSpan(text: 'PM\n', style: theme.textTheme.titleLarge),
-                    WidgetSpan(
+                    const WidgetSpan(
                         child: SizedBox(
                       height: 23,
                     )),
@@ -61,7 +61,7 @@ class _PlanCardState extends State<PlanCard> {
             ),
           ),
           const Divider(
-            color: Colors.grey,
+            color: Color.fromARGB(255, 229, 227, 227),
             thickness: 2,
           ),
           Row(
@@ -75,7 +75,7 @@ class _PlanCardState extends State<PlanCard> {
                         text: '10 Mbps\n',
                         style: theme.textTheme.titleLarge,
                         children: [
-                          WidgetSpan(
+                          const WidgetSpan(
                               child: SizedBox(
                             height: 25,
                           )),
@@ -88,9 +88,9 @@ class _PlanCardState extends State<PlanCard> {
               ),
               Padding(
                 padding:
-                    EdgeInsets.only(left: 26, right: 26, bottom: 8, top: 12),
+                    const EdgeInsets.only(left: 26, right: 26, bottom: 8, top: 12),
                 child: Column(children: [
-                  Icon(
+                  const Icon(
                     Icons.sim_card,
                     color: Colors.blue,
                     size: 45,
@@ -108,7 +108,7 @@ class _PlanCardState extends State<PlanCard> {
                   backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
-              child: Text(
+              child: const Text(
                 "Renew",
                 style: TextStyle(
                     color: Colors.white,

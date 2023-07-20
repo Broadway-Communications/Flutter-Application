@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-
 import 'package:flutter/material.dart';
 import 'package:unicorn/app/router.dart';
 
@@ -23,8 +22,6 @@ class _InitialPageState extends State<InitialPage>
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return AutoTabsRouter.tabBar(
       routes: const [
         HomeRoute(),
@@ -35,7 +32,7 @@ class _InitialPageState extends State<InitialPage>
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(280),
+            preferredSize: const Size.fromHeight(280),
             child: AppBar(
               backgroundColor: Theme.of(context).colorScheme.inversePrimary,
               toolbarHeight: 260,
@@ -94,7 +91,7 @@ class _InitialPageState extends State<InitialPage>
                 },
                 indicatorColor: Colors.white,
                 indicatorSize: TabBarIndicatorSize.tab,
-                indicatorPadding: EdgeInsets.all(4),
+                indicatorPadding: const EdgeInsets.all(4),
               ),
               centerTitle: false,
               flexibleSpace: Container(

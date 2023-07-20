@@ -39,9 +39,8 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(top: 20, bottom: 10),
               child: PlanCard(),
             ),
-            Container(
-              height: size.height *
-                  0.18, // Set a fixed height or provide constraints
+            SizedBox(
+              height: size.height * 0.18,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 controller: controller,
@@ -55,6 +54,48 @@ class _HomePageState extends State<HomePage> {
                       text: 'Wallet'),
                   IconCard(
                       size: size, icon: Icons.ramen_dining, text: 'Plan Info'),
+                ],
+              ),
+            ),
+            Padding(
+              padding:
+                  const EdgeInsets.only(top: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: SizedBox(
+                      width: 152.0,
+                      height: 50.0,
+                      child: ElevatedButton.icon(
+                        icon: const Icon(Icons.error_outline,
+                            color: Colors.white),
+                        label: const Text('Complaint',style: TextStyle(color: Colors.white)),
+                        onPressed: () {
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0F4C75)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: SizedBox(
+                      width: 115.0,
+                      height: 50.0,
+                      child: ElevatedButton.icon(
+                        icon: const Icon(Icons.question_answer_outlined,color: Colors.white),
+                        label: const Text('FAQ',style: TextStyle(color: Colors.white)),
+                        onPressed: () {
+                        },
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0F4C75)),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
