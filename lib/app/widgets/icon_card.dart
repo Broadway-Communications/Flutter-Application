@@ -43,8 +43,7 @@ class _IconCardState extends State<IconCard> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
-                    child: Icon(widget.icon,
-                        color: const Color.fromARGB(255, 5, 62, 112), size: 34),
+                    child: Icon(widget.icon,color: const Color.fromARGB(255, 5, 62, 112), size: 34),
                   ),
                 ),
               ),

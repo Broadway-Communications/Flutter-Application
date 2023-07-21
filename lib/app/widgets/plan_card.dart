@@ -1,123 +1,103 @@
 import 'package:flutter/material.dart';
 
-class PlanCard extends StatefulWidget {
-  const PlanCard({super.key});
-
-  @override
-  State<PlanCard> createState() => _PlanCardState();
-}
-
-class _PlanCardState extends State<PlanCard> {
+class PlanCard extends StatelessWidget {
+  const PlanCard({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width * 0.95,
-      decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: const Color.fromARGB(255, 195, 195, 195).withAlpha(255),
-              spreadRadius: 1,
-              blurRadius: 1,
-              offset: const Offset(0, 3),
-            ),
-          ]),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 26, bottom: 10),
-            child: SizedBox(
-              width: size.width * 0.55,
-              child: RichText(
-                maxLines: 3,
-                text: TextSpan(
-                  text: '12 Nov 2021 03:28\n',
-                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 24),
-                  children: [
-                    const WidgetSpan(
-                        child: SizedBox(
-                      height: 25,
-                    )),
-                    TextSpan(text: 'PM\n', style: theme.textTheme.titleLarge),
-                    const WidgetSpan(
-                        child: SizedBox(
-                      height: 23,
-                    )),
-                    TextSpan(
-                      text: 'Expiry Date',
-                      style: theme.textTheme.bodyMedium!
-                          .copyWith(color: Colors.black),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          const Divider(
-            color: Color.fromARGB(255, 229, 227, 227),
-            thickness: 2,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 26.0, top: 12),
-                child: SizedBox(
-                  child: RichText(
-                    text: TextSpan(
-                        text: '10 Mbps\n',
-                        style: theme.textTheme.titleLarge,
-                        children: [
-                          const WidgetSpan(
-                              child: SizedBox(
-                            height: 25,
-                          )),
-                          TextSpan(
-                              text: '1 Month',
-                              style: theme.textTheme.bodyMedium),
-                        ]),
+    return const Card(
+      elevation: 3.0,
+      margin: EdgeInsets.all(15),
+      child: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Blazing Speed',
+                  style: TextStyle(
+                    color: Color(0xFF021B15),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 20,
                   ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 26, right: 26, bottom: 8, top: 12),
-                child: Column(children: [
-                  const Icon(
-                    Icons.sim_card,
-                    color: Colors.blue,
-                    size: 45,
+                Text(
+                  'Paid',
+                  style: TextStyle(
+                    color: Color(0xFF2CA800),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 14,
                   ),
-                  Text('Prepaid', style: theme.textTheme.bodyLarge)
-                ]),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 1, left: 17, bottom: 8),
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))),
-              child: const Text(
-                "Renew",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 19,
-                    fontWeight: FontWeight.normal),
+                ),
+              ],
+            ),
+            SizedBox(height: 3),
+            Text(
+              '10 Mbps Unlimited',
+              style: TextStyle(
+                color: Color(0xFF3A5396),
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
               ),
             ),
-          )
-        ],
+            SizedBox(height: 5),
+            Text(
+              '1 Month',
+              style: TextStyle(
+                color: Color(0xFF021B15),
+                fontWeight: FontWeight.normal,
+                fontSize: 13,
+              ),
+            ),
+            SizedBox(height: 35),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Expiring in',
+                  style: TextStyle(
+                    color: Color(0xFF021B15),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 13,
+                  ),
+                ),
+                Text(
+                  'Bill Amount',
+                  style: TextStyle(
+                    color: Color(0xFF021B15),
+                    fontWeight: FontWeight.normal,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '24d 12h',
+                  style: TextStyle(
+                    color: Color(0xFF3A5396),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+                Text(
+                  '₹483',
+                  style: TextStyle(
+                    color: Color(0xFF3A5396),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

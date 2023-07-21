@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorn/app/widgets/icon_card.dart';
-import 'package:unicorn/app/widgets/plan_card.dart';
+import 'package:unicorn/app/widgets/plan_status_card.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             const Padding(
               padding: EdgeInsets.only(top: 20, bottom: 10),
-              child: PlanCard(),
+              child: PlanStatusCard(),
             ),
             SizedBox(
               height: size.height * 0.18,
