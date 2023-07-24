@@ -20,14 +20,15 @@ class _ProfilePageState extends State<ProfilePage> {
         width: size.width,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5), color: Colors.black),
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: Column(
           children: [
             Padding(
               padding: EdgeInsets.all(8),
               child: Text(
                 'Profile',
-                style: TextStyle(fontSize: 23.sp),
+                style: TextStyle(fontSize: 100.sp),
               ),
             )
           ],
