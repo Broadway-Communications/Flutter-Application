@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/router.dart';
 
 @RoutePage()
@@ -45,13 +46,13 @@ class _InitialPageState extends State<InitialPage>
                       padding: const EdgeInsets.all(2),
                       child: Text(
                         "Home",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17),
+                        style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontFamily: 'Lato',
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 0.5,
+                                height: 1.0,
+                                fontSize: 16.sp),
                       ),
                     ),
                   ),
@@ -60,13 +61,14 @@ class _InitialPageState extends State<InitialPage>
                       padding: const EdgeInsets.all(2),
                       child: Text(
                         "Invoice",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17),
+                        style:TextStyle(
+                          color: Color(0xFFFFFFFF),
+                                fontFamily: 'Lato',
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 0.5,
+                                height: 1.0,
+                                fontSize: 16.sp
+                                ),
                       ),
                     ),
                   ),
@@ -75,13 +77,13 @@ class _InitialPageState extends State<InitialPage>
                       padding: const EdgeInsets.all(2),
                       child: Text(
                         "Profile",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17),
+                        style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontFamily: 'Lato',
+                                fontWeight: FontWeight.w600,
+                                letterSpacing: 0.5,
+                                height: 1.0,
+                                fontSize: 16.sp),
                       ),
                     ),
                   ),
@@ -156,10 +158,15 @@ class _InitialPageState extends State<InitialPage>
                 children: [
                   Text(
                     "Welcome",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(color: Colors.white, fontSize: 48),
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 0.93), 
+                      fontSize: 48.sp,
+                      fontFamily: 'Lato',
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.5,
+                      height: 0.3333,
+                      ),
                   ),
                   CircleAvatar(
                     radius: 30,
@@ -178,33 +185,44 @@ class _InitialPageState extends State<InitialPage>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(2),
+              padding: const EdgeInsets.only(left:2,top:8),
               child: Text(
                 "Ankush Hegde",
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontFamily: 'Lato',
+                    fontSize: 23.sp,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                    letterSpacing: 0.5,
+                    height: 0.8,),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(2),
+              padding: const EdgeInsets.only(left:2,top:10),
               child: Text(
                 "ankush@gmail.com",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: Colors.white,
+                style:TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontFamily: 'Lato',
+                    fontStyle:FontStyle.normal,
+                    letterSpacing: 0.5,
+                    height: 1.0667,
                     fontSize: 15,
-                    fontWeight: FontWeight.normal),
+                    fontWeight: FontWeight.w400),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(2),
+              padding: const EdgeInsets.only(left:2,top:10),
               child: Text(
                 "123456789",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal),
+                style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w400,
+                    fontStyle: FontStyle.normal,
+                    fontFamily: 'Lato',
+                    ),
               ),
             )
           ],
