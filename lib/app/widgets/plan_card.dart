@@ -7,10 +7,10 @@ class PlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Card(
       elevation: 3.0,
-      color: Color.fromARGB(255, 255, 253, 253),
-      margin: EdgeInsets.all(15),
+      color: const Color.fromARGB(255, 255, 253, 253),
+      margin: const EdgeInsets.all(15),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,7 @@ class PlanCard extends StatelessWidget {
                 Text(
                   'Blazing Speed',
                   style: TextStyle(
-                    color: Color(0xFF021B15),
+                    color: const Color(0xFF021B15),
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Roboto',
                     fontStyle: FontStyle.normal,
@@ -33,7 +33,7 @@ class PlanCard extends StatelessWidget {
                 Text(
                   'Paid',
                   style: TextStyle(
-                    color: Color(0xFF2CA800),
+                    color: const Color(0xFF2CA800),
                     fontFamily: 'Roboto',
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.w400,
@@ -48,7 +48,7 @@ class PlanCard extends StatelessWidget {
             Text(
               '10 Mbps Unlimited',
               style: TextStyle(
-                color: Color(0xFF3A5396),
+                color: const Color(0xFF3A5396),
                 fontWeight: FontWeight.w600,
                 fontStyle: FontStyle.normal,
                 letterSpacing: 0.5,
@@ -59,7 +59,7 @@ class PlanCard extends StatelessWidget {
             Text(
               '1 Month',
               style: TextStyle(
-                color: Color(0xFF021B15),
+                color: const Color(0xFF021B15),
                 fontFamily: 'Roboto',
                 fontStyle: FontStyle.normal,
                 fontWeight: FontWeight.w400,
@@ -68,14 +68,14 @@ class PlanCard extends StatelessWidget {
                 fontSize: 13.sp,
               ),
             ),
-            SizedBox(height: 35),
+            const SizedBox(height: 35),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Expiring in',
                   style: TextStyle(
-                    color: Color(0xFF021B15),
+                    color: const Color(0xFF021B15),
                     fontWeight: FontWeight.normal,
                     fontSize: 13.sp,
                   ),
@@ -83,21 +83,21 @@ class PlanCard extends StatelessWidget {
                 Text(
                   'Bill Amount',
                   style: TextStyle(
-                    color: Color(0xFF021B15),
+                    color: const Color(0xFF021B15),
                     fontWeight: FontWeight.normal,
                     fontSize: 13.sp,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   '24d 12h',
                   style: TextStyle(
-                    color: Color(0xFF3A5396),
+                    color: const Color(0xFF3A5396),
                     fontWeight: FontWeight.w600,
                     fontSize: 20.sp,
                   ),
@@ -105,7 +105,7 @@ class PlanCard extends StatelessWidget {
                 Text(
                   '₹483',
                   style: TextStyle(
-                    color: Color(0xFF3A5396),
+                    color: const Color(0xFF3A5396),
                     fontWeight: FontWeight.w600,
                     fontSize: 20.sp,
                   ),

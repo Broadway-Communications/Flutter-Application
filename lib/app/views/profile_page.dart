@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: Text(
                 'Profile',
                 style: TextStyle(fontSize: 100.sp),
