@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:unicorn/app/router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  await ScreenUtil.ensureScreenSize();
   runApp(DevicePreview(
     enabled: true,
     builder: (context) => const MyApp(),
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       locale: DevicePreview.locale(context),
       builder: (context, router) {
+        ScreenUtil.init(context, designSize: const Size(360, 800));
         return ResponsiveWrapper.builder(
           BouncingScrollWrapper.builder(context, router!),
           maxWidth: 1200,
