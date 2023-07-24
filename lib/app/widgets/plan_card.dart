@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlanCard extends StatelessWidget {
   const PlanCard({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return  Card(
       elevation: 3.0,
+      color: Color.fromARGB(255, 255, 253, 253),
       margin: EdgeInsets.all(15),
       child: Padding(
         padding: EdgeInsets.all(20),
@@ -20,36 +22,50 @@ class PlanCard extends StatelessWidget {
                   'Blazing Speed',
                   style: TextStyle(
                     color: Color(0xFF021B15),
-                    fontWeight: FontWeight.normal,
-                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Roboto',
+                    fontStyle: FontStyle.normal,
+                    letterSpacing: 0.5,
+                    height: 0.8.h,
+                    fontSize: 20.sp,
                   ),
                 ),
                 Text(
                   'Paid',
                   style: TextStyle(
                     color: Color(0xFF2CA800),
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14,
+                    fontFamily: 'Roboto',
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w400,
+                    height: 1.14286,
+                    letterSpacing: 0.5,
+                    fontSize: 14.sp,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 3),
+            SizedBox(height: 3.h),
             Text(
               '10 Mbps Unlimited',
               style: TextStyle(
                 color: Color(0xFF3A5396),
                 fontWeight: FontWeight.w600,
-                fontSize: 20,
+                fontStyle: FontStyle.normal,
+                letterSpacing: 0.5,
+                fontSize: 20.sp,
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 5.h),
             Text(
               '1 Month',
               style: TextStyle(
                 color: Color(0xFF021B15),
-                fontWeight: FontWeight.normal,
-                fontSize: 13,
+                fontFamily: 'Roboto',
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                height: 1.23077.h,
+                letterSpacing: 0.5,
+                fontSize: 13.sp,
               ),
             ),
             SizedBox(height: 35),
@@ -61,7 +77,7 @@ class PlanCard extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF021B15),
                     fontWeight: FontWeight.normal,
-                    fontSize: 13,
+                    fontSize: 13.sp,
                   ),
                 ),
                 Text(
@@ -69,7 +85,7 @@ class PlanCard extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF021B15),
                     fontWeight: FontWeight.normal,
-                    fontSize: 13,
+                    fontSize: 13.sp,
                   ),
                 ),
               ],
@@ -83,7 +99,7 @@ class PlanCard extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF3A5396),
                     fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                   ),
                 ),
                 Text(
@@ -91,7 +107,7 @@ class PlanCard extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF3A5396),
                     fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                   ),
                 ),
               ],
