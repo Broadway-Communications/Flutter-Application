@@ -23,7 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
             width: 420.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: Color(0xFFFFFFFF),
+              color: Color.fromARGB(255, 248, 247, 252),
               boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
@@ -44,8 +44,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Text(
                     'Profile Settings',
                     style: GoogleFonts.roboto(
-                        fontSize: 16.sp,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w500,
+                        height: 1,
                         color: const Color(0xFF323134).withAlpha(230),
                         letterSpacing: 0.5),
                   ),
@@ -93,11 +94,11 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 3),
-        horizontalTitleGap: 7,
+        horizontalTitleGap: 1,
         title: Text(
           text,
           style: GoogleFonts.roboto(
-              fontSize: 16.sp,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w400,
               color: const Color(0xFF000000).withAlpha(230),
               letterSpacing: 0.5),
