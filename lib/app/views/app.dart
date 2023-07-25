@@ -12,8 +12,7 @@ class InitialPage extends StatefulWidget {
   State<InitialPage> createState() => _InitialPageState();
 }
 
-class _InitialPageState extends State<InitialPage>
-    with TickerProviderStateMixin {
+class _InitialPageState extends State<InitialPage> with TickerProviderStateMixin {
   late TabController controller;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

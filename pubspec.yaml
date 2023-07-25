@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   responsive_framework: ^0.1.4
+  flutter_svg: ^0.23.0+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -69,8 +70,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/
+  # assets:
+  #   - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -97,3 +98,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+dependency_overrides:
+  xml: ^5.0.0
