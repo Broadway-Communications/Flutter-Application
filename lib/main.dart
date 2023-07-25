@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   await ScreenUtil.ensureScreenSize();
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => const MyApp(),
   ));
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

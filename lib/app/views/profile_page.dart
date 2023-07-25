@@ -23,7 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
             width: 420.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: Color.fromARGB(213, 248, 248, 248),
+              color: const Color.fromARGB(213, 248, 248, 248),
               boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
@@ -66,7 +66,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       listItems(Icons.home, 'Update Address'),
                       listItems(Icons.lock_outline, 'Change Password'),
                       listItems(Icons.location_on_outlined, 'My Geo Location'),
-                      listItems(Icons.notifications_active_outlined, 'Push Notification'),
+                      listItems(Icons.notifications_active_outlined,
+                          'Push Notification'),
                     ],
                   ),
                 )
