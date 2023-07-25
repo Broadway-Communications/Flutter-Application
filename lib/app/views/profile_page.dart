@@ -19,11 +19,11 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Padding(
           padding: const EdgeInsets.only(top: 18.0),
           child: Container(
-            height: 520.h,
-            width: 390.w,
+            height: 560.h,
+            width: 420.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: const Color.fromRGBO(255, 255, 255, 0.85),
+              color: Color.fromARGB(213, 248, 248, 248),
               boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
@@ -55,18 +55,18 @@ class _ProfilePageState extends State<ProfilePage> {
                   thickness: 3,
                 ),
                 SizedBox(
-                  width: 390.w,
-                  height: 438.h,
+                  width: 500.w,
+                  height: 480.h,
                   child: ListView(
                     shrinkWrap: true,
                     children: [
                       listItems(Icons.email_outlined, 'Update Email'),
-                      listItems(Icons.email_outlined, 'Update Mobile'),
-                      listItems(Icons.email_outlined, 'Update Mac'),
-                      listItems(Icons.email_outlined, 'Update Address'),
-                      listItems(Icons.email_outlined, 'Change Password'),
-                      listItems(Icons.email_outlined, 'My Geo Location'),
-                      listItems(Icons.email_outlined, 'Push Notification'),
+                      listItems(Icons.phone_android, 'Update Mobile'),
+                      listItems(Icons.devices, 'Update Mac'),
+                      listItems(Icons.home, 'Update Address'),
+                      listItems(Icons.lock_outline, 'Change Password'),
+                      listItems(Icons.location_on_outlined, 'My Geo Location'),
+                      listItems(Icons.notifications_active_outlined, 'Push Notification'),
                     ],
                   ),
                 )

@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               height: size.height * 0.18,
+              
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 controller: controller,

@@ -7,7 +7,7 @@ class PlanCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Card(
       elevation: 3.0,
-      color: const Color.fromARGB(255, 255, 253, 253),
+      color: Colors.white,
       margin: const EdgeInsets.all(15),
       child: Padding(
         padding: const EdgeInsets.all(20),
