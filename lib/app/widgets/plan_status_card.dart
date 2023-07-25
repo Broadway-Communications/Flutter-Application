@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlanStatusCard extends StatefulWidget {
   const PlanStatusCard({super.key});
@@ -86,8 +87,8 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(left: 26, right: 26, bottom: 8, top: 12),
+                padding: const EdgeInsets.only(
+                    left: 26, right: 26, bottom: 8, top: 12),
                 child: Column(children: [
                   const Icon(
                     Icons.sim_card,
