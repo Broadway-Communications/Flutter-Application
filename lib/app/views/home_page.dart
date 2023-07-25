@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorn/app/widgets/icon_card.dart';
 import 'package:unicorn/app/widgets/plan_status_card.dart';
+import 'package:unicorn/app/widgets/register_complaint_pop_up.dart';
 
 @RoutePage()
 class HomePage extends StatefulWidget {
@@ -41,7 +42,6 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               height: size.height * 0.18,
-              
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 controller: controller,
@@ -54,13 +54,14 @@ class _HomePageState extends State<HomePage> {
                       icon: Icons.account_balance_wallet,
                       text: 'Wallet'),
                   IconCard(
-                      size: size, icon: Icons.receipt_long_outlined, text: 'Plan Info'),
+                      size: size,
+                      icon: Icons.receipt_long_outlined,
+                      text: 'Plan Info'),
                 ],
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(top: 30.0),
+              padding: const EdgeInsets.only(top: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -72,11 +73,32 @@ class _HomePageState extends State<HomePage> {
                       child: ElevatedButton.icon(
                         icon: const Icon(Icons.error_outline,
                             color: Colors.white),
-                        label: const Text('Complaint',style: TextStyle(color: Colors.white)),
+                        label: const Text('Complaint',
+                            style: TextStyle(color: Colors.white)),
                         onPressed: () {
+                          showGeneralDialog(
+                            context: context,
+                            barrierDismissible: true,
+                            barrierLabel: "Complaint",
+                            barrierColor: Colors.black.withOpacity(0.4),
+                            transitionDuration:
+                                const Duration(milliseconds: 150),
+                            pageBuilder:
+                                (context, animation, secondaryAnimation) {
+                              return const RegisterComplaintPopUp();
+                            },
+                            transitionBuilder: (context, animation,
+                                secondaryAnimation, child) {
+                              return FadeTransition(
+                                opacity: animation,
+                                child: child,
+                              );
+                            },
+                          );
                         },
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0F4C75)),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xFF0F4C75)),
                         ),
                       ),
                     ),
@@ -87,12 +109,14 @@ class _HomePageState extends State<HomePage> {
                       width: 115.0,
                       height: 50.0,
                       child: ElevatedButton.icon(
-                        icon: const Icon(Icons.question_answer_outlined,color: Colors.white),
-                        label: const Text('FAQ',style: TextStyle(color: Colors.white)),
-                        onPressed: () {
-                        },
+                        icon: const Icon(Icons.question_answer_outlined,
+                            color: Colors.white),
+                        label: const Text('FAQ',
+                            style: TextStyle(color: Colors.white)),
+                        onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF0F4C75)),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xFF0F4C75)),
                         ),
                       ),
                     ),
