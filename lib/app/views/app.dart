@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/router.dart';
 import 'package:unicorn/app/widgets/navigation_drawer.dart';
 import 'package:unicorn/app/widgets/app_bar_contents.dart';
@@ -8,7 +7,7 @@ import 'package:unicorn/app/widgets/app_bar_background.dart';
 
 @RoutePage()
 class InitialPage extends StatefulWidget {
-  const InitialPage({super.key});
+  const InitialPage({Key? key}) : super(key: key);
 
   @override
   State<InitialPage> createState() => _InitialPageState();
@@ -37,6 +36,7 @@ class _InitialPageState extends State<InitialPage>
       ],
       builder: (context, child, controller) {
         final tabsRouter = AutoTabsRouter.of(context);
+        final size = MediaQuery.of(context).size;
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
@@ -64,7 +64,7 @@ class _InitialPageState extends State<InitialPage>
                         color: Colors.white,
                       )),
                   SizedBox(
-                    width: 350.w,
+                    width: size.width * 0.85,
                     child: TabBar(
                       controller: controller,
                       tabs: [

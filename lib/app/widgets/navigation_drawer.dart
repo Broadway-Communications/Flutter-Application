@@ -31,6 +31,7 @@ class _NavDrawerState extends State<NavDrawer> {
             )
           ],
         ),
+        padding: const EdgeInsets.all(16.0),
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -39,11 +40,10 @@ class _NavDrawerState extends State<NavDrawer> {
             listItems(Icons.currency_exchange_outlined, 'Invoice History'),
             listItems(Icons.sell_outlined, 'Promo Offers'),
             listItems(Icons.language_outlined, 'Open in Browser'),
-            MyContainer(), // Add the MyContainer widget here
+            const MyContainer(), // Add the MyContainer widget here
             
           ],
         ),
-        padding: const EdgeInsets.all(16.0),
       ),
     );
   }
@@ -74,11 +74,13 @@ Widget listItems(IconData icon, String text) {
 }
 
 class MyContainer extends StatelessWidget {
+  const MyContainer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: Container(
-        padding: EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(5.0),
         height: 50,
         decoration: BoxDecoration(
           color: Colors.transparent,
