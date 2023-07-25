@@ -19,8 +19,8 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Padding(
           padding: const EdgeInsets.only(top: 18.0),
           child: Container(
-            height: 498.h,
-            width: 360.w,
+            height: 520.h,
+            width: 390.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
               color: const Color.fromRGBO(255, 255, 255, 0.85),
@@ -55,7 +55,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   thickness: 3,
                 ),
                 SizedBox(
-                  width: 337.w,
+                  width: 390.w,
                   height: 438.h,
                   child: ListView(
                     shrinkWrap: true,
