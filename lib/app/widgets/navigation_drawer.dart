@@ -34,7 +34,7 @@ class _NavDrawerState extends State<NavDrawer> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            listItems(Icons.tonality_outlined, 'Session History'),
+            listItems(Icons.donut_small_rounded, 'Session History'),
             listItems(Icons.error_outline, 'Complaint History'),
             listItems(Icons.currency_exchange_outlined, 'Invoice History'),
             listItems(Icons.sell_outlined, 'Promo Offers'),
