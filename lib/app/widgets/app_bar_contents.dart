@@ -24,21 +24,31 @@ Widget title(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
-      Padding(
-        padding: const EdgeInsets.all(2.0),
-        child: Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(120)),
-          ),
-          child: ClipOval(
-            child: Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKWxIwmVa8QmOHFoD75qJuEJh4O6dVc7-utA&usqp=CAU',
-              height: 48,
-              width: 48,
-              fit: BoxFit.fill,
+      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+         
+          Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(120)),
+              ),
+              child: ClipOval(
+                child: Image.network(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKWxIwmVa8QmOHFoD75qJuEJh4O6dVc7-utA&usqp=CAU',
+                  height: 48,
+                  width: 48,
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
           ),
-        ),
+           const Padding(padding: EdgeInsets.all(8),
+            child:Icon(Icons.notifications_outlined,
+            color: Colors.white,
+            size: 38,)
+          ),
+        ],
       ),
       const SizedBox(
         height: 30,
