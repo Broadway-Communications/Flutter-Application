@@ -22,16 +22,9 @@ class _NavDrawerState extends State<NavDrawer> {
             stops: [0.0, 1.0],
             tileMode: TileMode.clamp,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Color.fromRGBO(0, 0, 0, 0.25),
-              offset: Offset(10, 4),
-              blurRadius: 4,
-              spreadRadius: 0,
-            )
-          ],
+          
         ),
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(10.0),
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -51,12 +44,12 @@ class _NavDrawerState extends State<NavDrawer> {
 
 Widget listItems(IconData icon, String text) {
   return Padding(
-    padding: const EdgeInsets.only(top: 30, left: 20),
+    padding: const EdgeInsets.only(top: 20, left: 20),
     child: ListTile(
       leading: Icon(
         icon,
         color: Colors.white,
-        size: 38,
+        size: 34,
       ),
       contentPadding: const EdgeInsets.only(left: 10),
       horizontalTitleGap: 22,
@@ -78,28 +71,30 @@ class MyContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: Container(
-        padding: const EdgeInsets.all(5.0),
-        height: 50,
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: Colors.white,
-            width: 2,
-          ),
-        ),
-        child: Center(
-          child: Text(
-            'Logout',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20.sp,
-            ),
-          ),
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        width: 900,
+        child: ElevatedButton(
+                onPressed: () {},
+                
+                style: ElevatedButton.styleFrom(elevation: 0,
+                //fixedSize: Size(20, 70),
+                    backgroundColor: Colors.transparent ,
+                    shape: RoundedRectangleBorder(
+                      
+                        borderRadius: BorderRadius.circular(10),
+                        side: BorderSide(width: 2,color: Colors.white))),
+                child:  Text(
+                  "Logout",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 19.sp,
+                      fontWeight: FontWeight.normal),
+                ),
+              ),
       ),
+      
     );
   }
 }
