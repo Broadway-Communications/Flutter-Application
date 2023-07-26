@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class RegisterComplaintPopUp extends StatefulWidget {
@@ -10,7 +11,8 @@ class RegisterComplaintPopUp extends StatefulWidget {
 class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
   String? _mainType;
   String? _subType;
-  String? _description;
+  String? _description = '';
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +24,24 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
           ),
           contentPadding: const EdgeInsets.all(16.0),
           titlePadding: const EdgeInsets.all(0),
-          title: const Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Text('Register Complaint'),
+          title: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                right: 0,
+                child: Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: IconButton(
+                    icon: Icon(Icons.close),
+                    onPressed: () => context.router.pop(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Text('Register Complaint'),
+              ),
+            ],
           ),
           content: SingleChildScrollView(
             child: Padding(
@@ -85,16 +102,23 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                   const SizedBox(height: 15.0),
                   const Text('Description'),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.8,
-                    child: TextField(
-                      onChanged: (value) {
-                        _description = value;
-                      },
-                      minLines: 2,
-                      maxLines: 4,
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your complaint details',
-                        border: OutlineInputBorder(),
+                    width: MediaQuery.of(context).size.width * 0.85,
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 200),
+                      child: TextField(
+                        controller: controller,
+                        maxLength: 2000,
+                        onChanged: (value) {
+                          setState(() {
+                            _description = value;
+                          });
+                        },
+                        maxLines: null,
+                        decoration: InputDecoration(
+                          hintText: 'Enter your complaint details',
+                          counterText: '${_description!.length}/2000',
+                          border: const UnderlineInputBorder(),
+                        ),
                       ),
                     ),
                   ),
