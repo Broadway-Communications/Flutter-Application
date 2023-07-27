@@ -84,7 +84,7 @@ class MyContainer extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       
                         borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(width: 2,color: Colors.white))),
+                        side: const BorderSide(width: 2,color: Colors.white))),
                 child:  Text(
                   "Logout",
                   style: TextStyle(

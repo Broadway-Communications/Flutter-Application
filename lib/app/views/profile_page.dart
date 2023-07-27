@@ -23,7 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
             width: 420.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: Color.fromARGB(255, 248, 247, 252),
+              color: const Color.fromARGB(255, 248, 247, 252),
               boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),

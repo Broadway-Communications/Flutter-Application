@@ -7,7 +7,7 @@
 // ignore_for_file: type=lint
 // coverage:ignore-file
 
-part of 'router.dart';
+part of 'app_router.dart';
 
 abstract class _$AppRouter extends RootStackRouter {
   // ignore: unused_element
@@ -19,6 +19,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const InitialPage(),
+      );
+    },
+    ComplaintHistoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ComplaintHistoryPage(),
       );
     },
     HomeRoute.name: (routeData) {
@@ -52,6 +58,20 @@ class InitialRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'InitialRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ComplaintHistoryPage]
+class ComplaintHistoryRoute extends PageRouteInfo<void> {
+  const ComplaintHistoryRoute({List<PageRouteInfo>? children})
+      : super(
+          ComplaintHistoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ComplaintHistoryRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
