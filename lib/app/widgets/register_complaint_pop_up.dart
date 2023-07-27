@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:unicorn/app/router/app_router.dart';
 
 class RegisterComplaintPopUp extends StatefulWidget {
   const RegisterComplaintPopUp({Key? key}) : super(key: key);
@@ -30,14 +31,14 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                 top: 0,
                 right: 0,
                 child: Padding(
-                  padding: EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: IconButton(
-                    icon: Icon(Icons.close),
+                    icon: const Icon(Icons.close),
                     onPressed: () => context.router.pop(),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(25.0),
                 child: Text('Register Complaint'),
               ),
@@ -129,10 +130,18 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                       child: Column(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: null,
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  const Color(0xFF0F4C75)),
+                              backgroundColor:
+                                  MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                                  if (states.contains(MaterialState.disabled)) {
+                                    return Colors.grey;
+                                  } else {
+                                    return const Color(0xFF0F4C75);
+                                  }
+                                },
+                              ),
                             ),
                             child: const Text(
                               'Submit',
@@ -140,8 +149,20 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                             ),
                           ),
                           TextButton(
+                            onPressed: () => context.router
+                                .push(const ComplaintHistoryRoute()),
+                            style: ButtonStyle(
+                              foregroundColor:
+                                  MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                                  if (states.contains(MaterialState.disabled)) {
+                                    return Colors.grey;
+                                  }
+                                  return const Color(0xFF0F4C75);
+                                },
+                              ),
+                            ),
                             child: const Text('View History'),
-                            onPressed: () {},
                           ),
                         ],
                       ),

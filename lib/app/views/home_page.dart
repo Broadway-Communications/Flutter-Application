@@ -113,10 +113,19 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.white),
                         label: const Text('FAQ',
                             style: TextStyle(color: Colors.white)),
-                        onPressed: () {},
+                        onPressed: null,
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color(0xFF0F4C75)),
+                          backgroundColor:
+                              MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.disabled)) {
+                                return Colors
+                                    .grey;
+                              } else {
+                                return const Color(0xFF0F4C75);
+                              }
+                            },
+                          ),
                         ),
                       ),
                     ),

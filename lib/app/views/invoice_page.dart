@@ -20,22 +20,29 @@ class _InvoicePageState extends State<InvoicePage> {
           children: [
             const PlanCard(),
             Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                    ),
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color(0xFF0F4C75),
-                    ),
+              padding: const EdgeInsets.all(16.0),
+              child: ElevatedButton(
+                onPressed: null,
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   ),
-                  child: const Text(
-                    'View Previous',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                    (Set<MaterialState> states) {
+                      if (states.contains(MaterialState.disabled)) {
+                        return Colors.grey;
+                      } else {
+                        return const Color(0xFF0F4C75);
+                      }
+                    },
                   ),
-                )),
+                ),
+                child: const Text(
+                  'View Previous',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
+              ),
+            ),
           ],
         ),
       ),
