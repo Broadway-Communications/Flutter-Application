@@ -91,7 +91,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                 child: Column(children: [
                   const Icon(
                     Icons.sim_card,
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 53, 143, 202),
                     size: 45,
                   ),
                   Text('Prepaid', style: theme.textTheme.bodyLarge)
@@ -104,7 +104,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  backgroundColor: Color.fromARGB(255, 253, 88, 82),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
               child: const Text(

@@ -22,7 +22,7 @@ class ComplaintCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      color: Colors.white,
+      color: const Color.fromARGB(255, 252, 248, 255),
       elevation: 2,
       child: Container(
         padding: const EdgeInsets.all(15),
