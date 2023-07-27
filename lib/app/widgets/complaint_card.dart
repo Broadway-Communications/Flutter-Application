@@ -6,7 +6,7 @@ class ComplaintCard extends StatelessWidget {
   final String description;
   final String dateAdded;
   final String status;
-  final int rating;
+  final int? rating;
 
   const ComplaintCard(
       {Key? key,
@@ -15,7 +15,7 @@ class ComplaintCard extends StatelessWidget {
       required this.description,
       required this.dateAdded,
       required this.status,
-      required this.rating})
+      this.rating})
       : super(key: key);
 
   @override
@@ -23,7 +23,8 @@ class ComplaintCard extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       color: Colors.white,
-      elevation: 2,
+      elevation: 3,
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         padding: const EdgeInsets.all(15),
         child: Column(
@@ -84,7 +85,7 @@ class ComplaintCard extends StatelessWidget {
                   ],
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     const Text(
                       'Status',
@@ -97,11 +98,11 @@ class ComplaintCard extends StatelessWidget {
                     ),
                     Text(
                       status,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'Roboto',
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
-                        color: Color(0xFF7AC75D),
+                        color: getStatusColor(status),
                       ),
                     ),
                   ],
@@ -109,43 +110,58 @@ class ComplaintCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ...List.generate(
-                      rating,
-                      (index) => const Icon(
-                        Icons.star,
-                        color: Color(0xFF1C1B1F),
+            if (status == 'Closed')
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ...List.generate(
+                        rating!,
+                        (index) => const Icon(
+                          Icons.star,
+                          color: Color(0xFF1C1B1F),
+                        ),
                       ),
-                    ),
-                    ...List.generate(
-                      5 - rating,
-                      (index) => const Icon(
-                        Icons.star,
-                        color: Color(0xFFD9D9D9),
+                      ...List.generate(
+                        5 - rating!,
+                        (index) => const Icon(
+                          Icons.star,
+                          color: Color(0xFFD9D9D9),
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      '$rating/5',
-                      style: const TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xFF425550),
+                      const SizedBox(width: 10),
+                      Text(
+                        '$rating/5',
+                        style: const TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xFF425550),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
           ],
         ),
       ),
     );
+  }
+}
+
+// Status colors
+Color getStatusColor(String status) {
+  switch (status) {
+    case 'Closed':
+      return const Color(0xFF83E360);
+    case 'Open':
+      return Colors.red;
+    case 'In Progress':
+      return Colors.blueAccent;
+    default:
+      return Colors.black;
   }
 }
