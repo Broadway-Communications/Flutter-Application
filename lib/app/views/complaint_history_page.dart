@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:unicorn/app/widgets/complaint_card.dart';
 
 @RoutePage()
 class ComplaintHistoryPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class ComplaintHistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, 
+        statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
@@ -47,12 +48,28 @@ class ComplaintHistoryPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: Container(
-                    color: Colors.white, 
-                    child: const Center(
-                      child: Text('Your complaint history will appear here.'),
+                    color: Colors.white,
+                    child: const Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          ComplaintCard(
+                            complaintNumber: '617',
+                            issue: 'INTERNET Issue',
+                            description: 'Slow Speed',
+                            dateAdded: '2021-12-08 17:59:22',
+                            status: 'Closed',
+                            rating: 3,
+                          ),
+                          Expanded(
+                            child: SizedBox
+                                .shrink(),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                )
               ],
             ),
           ),
