@@ -24,9 +24,9 @@ Widget title(BuildContext context) {
     crossAxisAlignment: CrossAxisAlignment.start,
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
-      Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-         
           Padding(
             padding: const EdgeInsets.all(2.0),
             child: Container(
@@ -43,11 +43,13 @@ Widget title(BuildContext context) {
               ),
             ),
           ),
-           const Padding(padding: EdgeInsets.all(8),
-            child:Icon(Icons.notifications_outlined,
-            color: Colors.white,
-            size: 38,)
-          ),
+          const Padding(
+              padding: EdgeInsets.all(8),
+              child: Icon(
+                Icons.notifications_outlined,
+                color: Colors.white,
+                size: 38,
+              )),
         ],
       ),
       const SizedBox(

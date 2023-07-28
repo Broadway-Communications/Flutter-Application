@@ -40,6 +40,7 @@ dependencies:
   auto_route: ^7.7.0
   flutter_screenutil: ^5.8.4
   google_fonts: ^5.1.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:

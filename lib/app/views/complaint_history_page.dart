@@ -100,9 +100,9 @@ class ComplaintHistoryPage extends StatelessWidget {
                                       complaint['description'] as String,
                                   dateAdded: complaint['dateAdded'] as String,
                                   status: complaint['status'] as String,
-                                  rating: complaint['rating'] != null
-                                      ? complaint['rating'] as int
-                                      : null,
+                                  // rating: complaint['rating'] != null
+                                  //     ? complaint['rating'] as int
+                                  //     : null,
                                 );
                               }).toList(),
                             ),

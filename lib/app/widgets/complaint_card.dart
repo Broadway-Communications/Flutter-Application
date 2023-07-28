@@ -1,22 +1,36 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class ComplaintCard extends StatelessWidget {
+class ComplaintCard extends StatefulWidget {
   final String complaintNumber;
   final String issue;
   final String description;
   final String dateAdded;
   final String status;
-  final int rating;
 
-  const ComplaintCard(
-      {Key? key,
-      required this.complaintNumber,
-      required this.issue,
-      required this.description,
-      required this.dateAdded,
-      required this.status,
-      required this.rating})
-      : super(key: key);
+  ComplaintCard({
+    Key? key,
+    required this.complaintNumber,
+    required this.issue,
+    required this.description,
+    required this.dateAdded,
+    required this.status,
+  }) : super(key: key);
+
+  @override
+  State<ComplaintCard> createState() => _ComplaintCardState();
+}
+
+class _ComplaintCardState extends State<ComplaintCard> {
+  double rating = -1;
+
+  @override
+  void initState() {
+    rating = -1;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +45,7 @@ class ComplaintCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              '#$complaintNumber',
+              '#${widget.complaintNumber}',
               style: const TextStyle(
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.w700,
@@ -40,7 +54,7 @@ class ComplaintCard extends StatelessWidget {
               ),
             ),
             Text(
-              issue,
+              widget.issue,
               style: const TextStyle(
                 fontFamily: 'Lato',
                 fontWeight: FontWeight.w700,
@@ -49,7 +63,7 @@ class ComplaintCard extends StatelessWidget {
               ),
             ),
             Text(
-              description,
+              widget.description,
               style: TextStyle(
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.w400,
@@ -65,7 +79,7 @@ class ComplaintCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      dateAdded,
+                      widget.dateAdded,
                       style: const TextStyle(
                         fontFamily: 'Lato',
                         fontWeight: FontWeight.w500,
@@ -96,54 +110,136 @@ class ComplaintCard extends StatelessWidget {
                         color: Color(0xFF425550),
                       ),
                     ),
-                    Text(
-                      status,
-                      style: const TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Color(0xFF7AC75D),
-                      ),
-                    ),
+                    // Text(
+                    //   status,
+                    //   style: const TextStyle(
+                    //     fontFamily: 'Roboto',
+                    //     fontWeight: FontWeight.w500,
+                    //     fontSize: 16,
+                    //     color: Color(0xFF7AC75D),
+                    //   ),
+                    // ),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      ...List.generate(
-                      rating,
-                        (index) => const Icon(
-                          Icons.star,
-                          color: Color(0xFF1C1B1F),
-                        ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                child: rating == -1
+                    ? rateButton(context)
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          RatingBarIndicator(
+                              rating: rating,
+                              itemBuilder: (context, index) {
+                                return Icon(
+                                  Icons.star,
+                                  color: Colors.blue[900],
+                                );
+                              }),
+                          rateButton(context)
+                        ],
                       ),
-                      ...List.generate(
-                      5 - rating,
-                        (index) => const Icon(
-                          Icons.star,
-                          color: Color(0xFFD9D9D9),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Text(
-                        '$rating/5',
-                        style: const TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14,
-                          color: Color(0xFF425550),
-                        ),
-                      ),
-                    ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  ElevatedButton rateButton(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+      ),
+      onPressed: () => showDialog(
+        context: context,
+        builder: (context) {
+          final size = MediaQuery.of(context).size;
+          return dialogBox(size);
+        },
+      ),
+      child: Text(
+        'Rate',
+        style: TextStyle(fontSize: 23.sp),
+      ),
+    );
+  }
+
+  AlertDialog dialogBox(Size size) {
+    return AlertDialog(
+      titlePadding: EdgeInsets.all(2),
+      title: Stack(
+        children: [
+          Positioned(
+            top: 0.0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: IconButton(
+                icon: const Icon(Icons.close),
+                onPressed: () {
+                  rating = -1;
+                  context.router.pop();
+                },
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0).copyWith(top: 24),
+              child: Text(
+                'Rate Us!!',
+              ),
+            ),
+          ),
+        ],
+      ),
+      content: SizedBox(
+        height: size.height * 0.17,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            RatingBar.builder(
+                glow: false,
+                itemPadding: EdgeInsets.all(2),
+                allowHalfRating: true,
+                itemBuilder: (context, index) {
+                  return Icon(
+                    Icons.star,
+                    color: Colors.blue[900],
+                  );
+                },
+                onRatingUpdate: (newRating) {
+                  rating = newRating;
+                }),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    rating = rating;
+                    context.router.pop();
+                  });
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                    (Set<MaterialState> states) {
+                      return Color(0xFF0F4C75);
+                    },
                   ),
                 ),
+                child: const Text(
+                  'Submit',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
+            ),
           ],
         ),
       ),

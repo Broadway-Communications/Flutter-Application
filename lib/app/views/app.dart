@@ -41,7 +41,7 @@ class _InitialPageState extends State<InitialPage>
           appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            toolbarHeight: 280,
+            toolbarHeight: size.height * 0.34,
             title: title(context),
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(12),
@@ -49,15 +49,9 @@ class _InitialPageState extends State<InitialPage>
                 children: [
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          if (_scaffoldKey.currentState!.isDrawerOpen) {
-                            menuIcon = Icons.menu_outlined;
-                            _scaffoldKey.currentState?.closeDrawer();
-                          } else {
-                            menuIcon = Icons.close;
-                            _scaffoldKey.currentState?.openDrawer();
-                          }
-                        });
+                        _scaffoldKey.currentState!.isDrawerOpen
+                            ? _scaffoldKey.currentState!.closeDrawer()
+                            : _scaffoldKey.currentState!.openDrawer();
                       },
                       icon: Icon(
                         menuIcon,
@@ -94,6 +88,13 @@ class _InitialPageState extends State<InitialPage>
           ),
           body: Scaffold(
             key: _scaffoldKey,
+            onDrawerChanged: (isOpened) => setState(() {
+              if (isOpened) {
+                menuIcon = Icons.close;
+              } else {
+                menuIcon = Icons.menu;
+              }
+            }),
             drawer: const NavDrawer(),
             body: GestureDetector(child: Builder(
               builder: (context) {
