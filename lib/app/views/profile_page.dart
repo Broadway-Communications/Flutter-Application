@@ -67,11 +67,11 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget listItems(IconData icon, String text) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(10.0),
       child: ListTile(
         leading: CircleAvatar(
           radius: 43,
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xFFB4BBEA),
           child: Icon(
             icon,
             color: Colors.black,
@@ -79,7 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 3),
-        horizontalTitleGap: 1,
+        horizontalTitleGap: 7,
         title: Text(
           text,
           style: GoogleFonts.roboto(
