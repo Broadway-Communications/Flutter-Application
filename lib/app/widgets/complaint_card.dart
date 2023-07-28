@@ -37,7 +37,8 @@ class _ComplaintCardState extends State<ComplaintCard> {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       color: Colors.white,
-      elevation: 2,
+      elevation: 3,
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         padding: const EdgeInsets.all(15),
         child: Column(
@@ -98,7 +99,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
                   ],
                 ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     const Text(
                       'Status',
@@ -109,15 +110,15 @@ class _ComplaintCardState extends State<ComplaintCard> {
                         color: Color(0xFF425550),
                       ),
                     ),
-                    Text(
-                      widget.status,
-                      style: const TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16,
-                        color: Color(0xFF7AC75D),
-                      ),
-                    ),
+                    // Text(
+                    //   status,
+                    //   style: const TextStyle(
+                    //     fontFamily: 'Roboto',
+                    //     fontWeight: FontWeight.w500,
+                    //     fontSize: 16,
+                    //     color: Color(0xFF7AC75D),
+                    //   ),
+                    // ),
                   ],
                 ),
               ],
@@ -243,5 +244,19 @@ class _ComplaintCardState extends State<ComplaintCard> {
         ),
       ),
     );
+  }
+}
+
+// Status colors
+Color getStatusColor(String status) {
+  switch (status) {
+    case 'Closed':
+      return const Color(0xFF83E360);
+    case 'Open':
+      return Colors.red;
+    case 'In Progress':
+      return Colors.blueAccent;
+    default:
+      return Colors.black;
   }
 }
