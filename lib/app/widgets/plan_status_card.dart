@@ -15,10 +15,10 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
       width: size.width * 0.95,
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(8)),
-          color: const Color.fromARGB(255, 255, 255, 255),
+          color: Color.fromARGB(255, 246, 246, 253),
           boxShadow: [
             BoxShadow(
-              color: const Color.fromARGB(255, 195, 195, 195).withAlpha(255),
+              color: Color.fromARGB(255, 175, 172, 214).withAlpha(255),
               spreadRadius: 1,
               blurRadius: 1,
               offset: const Offset(0, 3),
@@ -60,7 +60,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
             ),
           ),
           const Divider(
-            color: Color.fromARGB(255, 229, 227, 227),
+            color: Color.fromARGB(255, 196, 190, 211),
             thickness: 2,
           ),
           Row(
@@ -91,7 +91,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                 child: Column(children: [
                   const Icon(
                     Icons.sim_card,
-                    color: Color.fromARGB(255, 53, 143, 202),
+                    color: Color.fromARGB(255, 0, 110, 184),
                     size: 45,
                   ),
                   Text('Prepaid', style: theme.textTheme.bodyLarge)
