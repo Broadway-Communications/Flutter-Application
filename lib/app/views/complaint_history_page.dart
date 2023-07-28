@@ -49,7 +49,7 @@ class ComplaintHistoryPage extends StatelessWidget {
                 Expanded(
                   child: Container(
                     color: Colors.white,
-                    child: const Padding(
+                    child: Padding(
                       padding: EdgeInsets.all(20.0),
                       child: Column(
                         children: [
@@ -59,11 +59,10 @@ class ComplaintHistoryPage extends StatelessWidget {
                             description: 'Slow Speed',
                             dateAdded: '2021-12-08 17:59:22',
                             status: 'Closed',
-                            rating: 3,
+                            // rating: 3,
                           ),
                           Expanded(
-                            child: SizedBox
-                                .shrink(),
+                            child: SizedBox.shrink(),
                           ),
                         ],
                       ),
