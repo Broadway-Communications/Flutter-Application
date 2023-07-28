@@ -22,8 +22,9 @@ class ComplaintCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      color: const Color.fromARGB(255, 252, 248, 255),
-      elevation: 2,
+      color: Colors.white,
+      elevation: 3,
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
       child: Container(
         padding: const EdgeInsets.all(15),
         child: Column(
@@ -109,40 +110,40 @@ class ComplaintCard extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ...List.generate(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      ...List.generate(
                       rating,
-                      (index) => const Icon(
-                        Icons.star,
-                        color: Color(0xFF1C1B1F),
+                        (index) => const Icon(
+                          Icons.star,
+                          color: Color(0xFF1C1B1F),
+                        ),
                       ),
-                    ),
-                    ...List.generate(
+                      ...List.generate(
                       5 - rating,
-                      (index) => const Icon(
-                        Icons.star,
-                        color: Color(0xFFD9D9D9),
+                        (index) => const Icon(
+                          Icons.star,
+                          color: Color(0xFFD9D9D9),
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      '$rating/5',
-                      style: const TextStyle(
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14,
-                        color: Color(0xFF425550),
+                      const SizedBox(width: 10),
+                      Text(
+                        '$rating/5',
+                        style: const TextStyle(
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: Color(0xFF425550),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
           ],
         ),
       ),

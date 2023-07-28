@@ -40,7 +40,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
               ),
               const Padding(
                 padding: EdgeInsets.all(25.0),
-                child: Text('Register Complaint'),
+                child: Text(
+                  'Register Complaint',
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
               ),
             ],
           ),
@@ -52,7 +55,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Complaint MainType'),
+                      const Text(
+                        'Complaint MainType',
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
                       DropdownButton<String>(
                         isExpanded: true,
                         hint: const Text('Select Complaint MainType'),
@@ -76,7 +82,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Complaint SubType'),
+                      const Text(
+                        'Complaint SubType',
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
                       DropdownButton<String>(
                         isExpanded: true,
                         hint: const Text('Select Complaint SubType'),
@@ -101,7 +110,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                     ],
                   ),
                   const SizedBox(height: 15.0),
-                  const Text('Description'),
+                  const Text(
+                    'Description',
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.85,
                     child: ConstrainedBox(
