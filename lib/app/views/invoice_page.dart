@@ -1,5 +1,6 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:unicorn/app/router/app_router.dart';
 import 'package:unicorn/app/widgets/plan_card.dart';
 
 @RoutePage()
@@ -22,7 +23,9 @@ class _InvoicePageState extends State<InvoicePage> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: ElevatedButton(
-                onPressed: null,
+                onPressed: () {
+                  context.pushRoute(const InvoiceHistoryRoute());
+                },
                 style: ButtonStyle(
                   padding: MaterialStateProperty.all<EdgeInsets>(
                     const EdgeInsets.symmetric(horizontal: 30, vertical: 15),

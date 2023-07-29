@@ -5,6 +5,7 @@ import 'package:unicorn/app/views/invoice_page.dart';
 import 'package:unicorn/app/views/profile_page.dart';
 import 'package:unicorn/app/views/app.dart';
 import 'package:unicorn/app/views/complaint_history_page.dart';
+import 'package:unicorn/app/views/invoice_history_page.dart';
 part 'app_router.gr.dart';
 
 @AutoRouterConfig()
@@ -24,7 +25,20 @@ class AppRouter extends _$AppRouter {
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
               position: animation.drive(
-                  Tween(begin: Offset(0, 1), end: Offset.zero)
+                  Tween(begin: const Offset(0, 1), end: Offset.zero)
+                      .chain(CurveTween(curve: Curves.ease))),
+              child: child,
+            );
+          },
+        ),
+        CustomRoute(
+          page: InvoiceHistoryRoute.page,
+          path: '/invoiceHistoryPage',
+          initial: false,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: animation.drive(
+                  Tween(begin: const Offset(0, 1), end: Offset.zero)
                       .chain(CurveTween(curve: Curves.ease))),
               child: child,
             );

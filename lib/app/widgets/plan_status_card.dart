@@ -112,13 +112,13 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 253, 88, 82),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))),
+                      borderRadius: BorderRadius.circular(100))),
               child: const Text(
                 "Renew",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 19,
-                    fontWeight: FontWeight.normal),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
               ),
             ),
           )

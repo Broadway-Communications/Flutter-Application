@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ComplaintHistoryPage(),
       );
     },
+    InvoiceHistoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const InvoiceHistoryPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -72,6 +78,20 @@ class ComplaintHistoryRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ComplaintHistoryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ComplaintHistoryPage]
+class InvoiceHistoryRoute extends PageRouteInfo<void> {
+  const InvoiceHistoryRoute({List<PageRouteInfo>? children})
+      : super(
+          InvoiceHistoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'InvoiceHistoryRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

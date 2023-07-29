@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/router/app_router.dart';
-import 'package:unicorn/app/views/complaint_history_page.dart';
 
 class NavDrawer extends StatefulWidget {
   const NavDrawer({super.key});
@@ -43,13 +42,16 @@ class _NavDrawerState extends State<NavDrawer> {
                     listItems(Icons.donut_small_rounded, 'Session History'),
                     listItems(Icons.error_outline, 'Complaint History',
                         onPressed: () =>
-                            context.router.push(ComplaintHistoryRoute()),
+                            context.router.push(const ComplaintHistoryRoute()),
                         disabled: false),
                     listItems(
-                        Icons.currency_exchange_outlined, 'Invoice History'),
+                        Icons.currency_exchange_outlined, 'Invoice History',
+                        onPressed: () =>
+                            context.pushRoute(const InvoiceHistoryRoute()),
+                        disabled: false),
                     listItems(Icons.sell_outlined, 'Promo Offers'),
                     listItems(Icons.language_outlined, 'Open in Browser'),
-                    const MyContainer(), // Add the MyContainer widget here
+                    const MyContainer(),
                   ],
                 ),
               ),
@@ -60,7 +62,7 @@ class _NavDrawerState extends State<NavDrawer> {
                   style: GoogleFonts.roboto(
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
-                    color: const Color.fromARGB(255, 162, 208, 230),
+                    color: Colors.grey,
                     letterSpacing: 0.5,
                   ),
                 ),
@@ -86,7 +88,11 @@ listItems(IconData icon, String text,
             borderRadius: BorderRadius.all(Radius.circular(30))),
         child: InkWell(
           borderRadius: const BorderRadius.all(Radius.circular(30)),
-          onTap: () => onPressed!(),
+          onTap: onPressed != null
+              ? () {
+                  onPressed();
+                }
+              : null,
           child: ListTile(
             leading: Icon(
               icon,
@@ -99,7 +105,7 @@ listItems(IconData icon, String text,
               text,
               style: GoogleFonts.roboto(
                 fontSize: 17.sp,
-                fontWeight: !disabled ? FontWeight.w500 : FontWeight.w300,
+                fontWeight: FontWeight.w500,
                 color: !disabled ? Colors.white : Colors.grey,
                 letterSpacing: 0.5,
               ),
@@ -171,14 +177,5 @@ class MyContainer extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class DummyWidget extends StatelessWidget {
-  const DummyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

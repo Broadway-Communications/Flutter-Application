@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Padding(
               padding: EdgeInsets.only(top: 20, bottom: 17.h),
-              child: PlanStatusCard(),
+              child: const PlanStatusCard(),
             ),
             SizedBox(
               height: size.height * 0.18,
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                                 secondaryAnimation, child) {
                               return SlideTransition(
                                 position: animation.drive(
-                                    Tween(begin: Offset(0, 1), end: Offset.zero)
+                                    Tween(begin: const Offset(0, 1), end: Offset.zero)
                                         .chain(CurveTween(curve: Curves.ease))),
                                 child: child,
                               );

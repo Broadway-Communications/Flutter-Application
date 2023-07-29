@@ -27,7 +27,7 @@ class ComplaintCard extends StatefulWidget {
 
 class _ComplaintCardState extends State<ComplaintCard> {
   List<Map<String, Color>> status = [
-    {"Closed": Color(0xFF83E360)},
+    {"Closed": const Color(0xFF83E360)},
     {"Open": Colors.red},
     {"In Progress": Colors.blueAccent},
   ];
@@ -199,9 +199,9 @@ class _ComplaintCardState extends State<ComplaintCard> {
 
   AlertDialog dialogBox(Size size) {
     return AlertDialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: 10),
+      insetPadding: const EdgeInsets.symmetric(horizontal: 10),
       titlePadding: const EdgeInsets.all(2),
-      contentPadding: EdgeInsets.symmetric(horizontal: 83),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 83),
       title: Stack(
         children: [
           Positioned(

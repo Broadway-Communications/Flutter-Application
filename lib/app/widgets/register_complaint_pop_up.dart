@@ -23,7 +23,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
         return AlertDialog(
           
           insetPadding: EdgeInsets.symmetric(horizontal: 13.w),
-          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),
