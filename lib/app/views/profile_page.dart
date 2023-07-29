@@ -71,7 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
       child: ListTile(
         leading: CircleAvatar(
           radius: 43,
-          backgroundColor: Color(0xFFB4BBEA),
+          backgroundColor: const Color(0xFFB4BBEA),
           child: Icon(
             icon,
             color: Colors.black,

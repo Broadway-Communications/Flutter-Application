@@ -19,7 +19,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return AlertDialog(backgroundColor:Color.fromRGBO(255, 255, 255, 1),
+        return AlertDialog(backgroundColor:const Color.fromRGBO(255, 255, 255, 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),

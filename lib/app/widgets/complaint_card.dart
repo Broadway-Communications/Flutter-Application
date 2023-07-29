@@ -10,7 +10,7 @@ class ComplaintCard extends StatefulWidget {
   final String dateAdded;
   final String status;
 
-  ComplaintCard({
+  const ComplaintCard({
     Key? key,
     required this.complaintNumber,
     required this.issue,
@@ -98,10 +98,10 @@ class _ComplaintCardState extends State<ComplaintCard> {
                     ),
                   ],
                 ),
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    const Text(
+                    Text(
                       'Status',
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -165,14 +165,14 @@ class _ComplaintCardState extends State<ComplaintCard> {
       ),
       child: Text(
         'Rate',
-        style: TextStyle(fontSize: 23.sp),
+        style: TextStyle(fontSize: 15.sp),
       ),
     );
   }
 
   AlertDialog dialogBox(Size size) {
     return AlertDialog(
-      titlePadding: EdgeInsets.all(2),
+      titlePadding: const EdgeInsets.all(2),
       title: Stack(
         children: [
           Positioned(
@@ -193,7 +193,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
             alignment: Alignment.center,
             child: Padding(
               padding: const EdgeInsets.all(8.0).copyWith(top: 24),
-              child: Text(
+              child: const Text(
                 'Rate Us!!',
               ),
             ),
@@ -207,7 +207,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
           children: [
             RatingBar.builder(
                 glow: false,
-                itemPadding: EdgeInsets.all(2),
+                itemPadding: const EdgeInsets.all(2),
                 allowHalfRating: true,
                 itemBuilder: (context, index) {
                   return Icon(
@@ -230,7 +230,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
-                      return Color(0xFF0F4C75);
+                      return const Color(0xFF0F4C75);
                     },
                   ),
                 ),

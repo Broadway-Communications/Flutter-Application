@@ -41,7 +41,7 @@ class _InitialPageState extends State<InitialPage>
           appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            toolbarHeight: size.height * 0.34,
+            toolbarHeight: size.height * 0.3,
             title: title(context),
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(12),

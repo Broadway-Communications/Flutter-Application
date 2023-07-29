@@ -22,7 +22,7 @@ class _IconCardState extends State<IconCard> {
         width: size.width * 0.28,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 245, 245, 255),
+          color: const Color.fromARGB(255, 245, 245, 255),
           borderRadius: BorderRadius.circular(12),
           boxShadow: const [
             BoxShadow(
@@ -43,7 +43,7 @@ class _IconCardState extends State<IconCard> {
                     borderRadius: BorderRadius.circular(100),
                   ),
                   child: Center(
-                    child: Icon(widget.icon,color: Color.fromARGB(255, 37, 68, 134),size: 34),
+                    child: Icon(widget.icon,color: const Color.fromARGB(255, 37, 68, 134),size: 34),
                   ),
                 ),
               ),

@@ -15,10 +15,10 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
       width: size.width * 0.95,
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(8)),
-          color: Color.fromARGB(255, 246, 246, 253),
+          color: const Color.fromARGB(255, 246, 246, 253),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 175, 172, 214).withAlpha(255),
+              color: const Color.fromARGB(255, 175, 172, 214).withAlpha(255),
               spreadRadius: 1,
               blurRadius: 1,
               offset: const Offset(0, 3),
@@ -104,7 +104,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 253, 88, 82),
+                  backgroundColor: const Color.fromARGB(255, 253, 88, 82),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10))),
               child: const Text(
