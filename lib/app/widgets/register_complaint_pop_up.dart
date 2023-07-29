@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/router/app_router.dart';
 
 class RegisterComplaintPopUp extends StatefulWidget {
@@ -19,7 +20,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return AlertDialog(backgroundColor:const Color.fromRGBO(255, 255, 255, 1),
+        return AlertDialog(
+          
+          insetPadding: EdgeInsets.symmetric(horizontal: 13.w),
+          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),

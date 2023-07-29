@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +10,7 @@ class ComplaintCard extends StatefulWidget {
   final String issue;
   final String description;
   final String dateAdded;
-  final String status;
+  final int index;
 
   const ComplaintCard({
     Key? key,
@@ -16,7 +18,7 @@ class ComplaintCard extends StatefulWidget {
     required this.issue,
     required this.description,
     required this.dateAdded,
-    required this.status,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -24,11 +26,18 @@ class ComplaintCard extends StatefulWidget {
 }
 
 class _ComplaintCardState extends State<ComplaintCard> {
+  List<Map<String, Color>> status = [
+    {"Closed": Color(0xFF83E360)},
+    {"Open": Colors.red},
+    {"In Progress": Colors.blueAccent},
+  ];
   double rating = -1;
+  var rng = Random();
 
   @override
   void initState() {
     rating = -1;
+    status.shuffle();
     super.initState();
   }
 
@@ -98,10 +107,10 @@ class _ComplaintCardState extends State<ComplaintCard> {
                     ),
                   ],
                 ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Status',
                       style: TextStyle(
                         fontFamily: 'Roboto',
@@ -110,52 +119,55 @@ class _ComplaintCardState extends State<ComplaintCard> {
                         color: Color(0xFF425550),
                       ),
                     ),
-                    // Text(
-                    //   status,
-                    //   style: const TextStyle(
-                    //     fontFamily: 'Roboto',
-                    //     fontWeight: FontWeight.w500,
-                    //     fontSize: 16,
-                    //     color: Color(0xFF7AC75D),
-                    //   ),
-                    // ),
+                    Text(
+                      status[widget.index].keys.first,
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: status[widget.index].values.first,
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                child: rating == -1
-                    ? rateButton(context)
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          RatingBarIndicator(
-                              rating: rating,
-                              itemBuilder: (context, index) {
-                                return Icon(
-                                  Icons.star,
-                                  color: Colors.blue[900],
-                                );
-                              }),
-                          rateButton(context)
-                        ],
-                      ),
-              ),
-            )
+            status[widget.index].keys.first == 'Open' ||
+                    status[widget.index].keys.first == 'In Progress'
+                ? const SizedBox.shrink()
+                : Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: rating == -1
+                          ? rateButton(context)
+                          : Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                RatingBarIndicator(
+                                    itemSize: 23,
+                                    rating: rating,
+                                    itemBuilder: (context, index) {
+                                      return Icon(
+                                        Icons.star,
+                                        color: Colors.blue[900],
+                                      );
+                                    }),
+                                rateButton(context)
+                              ],
+                            ),
+                    ),
+                  )
           ],
         ),
       ),
     );
   }
 
-  ElevatedButton rateButton(BuildContext context) {
+  Widget rateButton(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        elevation: 0,
-      ),
+          elevation: 0, backgroundColor: Colors.transparent),
       onPressed: () => showDialog(
         context: context,
         builder: (context) {
@@ -163,16 +175,33 @@ class _ComplaintCardState extends State<ComplaintCard> {
           return dialogBox(size);
         },
       ),
-      child: Text(
-        'Rate',
-        style: TextStyle(fontSize: 15.sp),
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.17,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            rating == -1
+                ? const Padding(
+                    padding: EdgeInsets.only(right: 7),
+                    child: Icon(Icons.star_border_rounded),
+                  )
+                : const SizedBox.shrink(),
+            Text(
+              'Rate',
+              textAlign: TextAlign.end,
+              style: TextStyle(fontSize: 18.sp),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   AlertDialog dialogBox(Size size) {
     return AlertDialog(
+      insetPadding: EdgeInsets.symmetric(horizontal: 10),
       titlePadding: const EdgeInsets.all(2),
+      contentPadding: EdgeInsets.symmetric(horizontal: 83),
       title: Stack(
         children: [
           Positioned(

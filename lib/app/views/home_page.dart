@@ -82,15 +82,17 @@ class _HomePageState extends State<HomePage> {
                             barrierLabel: "Complaint",
                             barrierColor: Colors.black.withOpacity(0.4),
                             transitionDuration:
-                                const Duration(milliseconds: 150),
+                                const Duration(milliseconds: 300),
                             pageBuilder:
                                 (context, animation, secondaryAnimation) {
                               return const RegisterComplaintPopUp();
                             },
                             transitionBuilder: (context, animation,
                                 secondaryAnimation, child) {
-                              return FadeTransition(
-                                opacity: animation,
+                              return SlideTransition(
+                                position: animation.drive(
+                                    Tween(begin: Offset(0, 1), end: Offset.zero)
+                                        .chain(CurveTween(curve: Curves.ease))),
                                 child: child,
                               );
                             },
@@ -119,8 +121,7 @@ class _HomePageState extends State<HomePage> {
                               MaterialStateProperty.resolveWith<Color>(
                             (Set<MaterialState> states) {
                               if (states.contains(MaterialState.disabled)) {
-                                return Colors
-                                    .grey;
+                                return Colors.grey;
                               } else {
                                 return const Color(0xFF0F4C75);
                               }

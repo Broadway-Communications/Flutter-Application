@@ -39,11 +39,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 SizedBox(
                   height: 15.h,
                 ),
-                
                 SizedBox(
                   width: 500.w,
                   height: 580.h,
                   child: ListView(
+                    primary: false,
                     shrinkWrap: true,
                     children: [
                       listItems(Icons.email_outlined, 'Update Email'),

@@ -26,17 +26,20 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: (context, router) {
         ScreenUtil.init(context, designSize: const Size(360, 800));
-        return ResponsiveWrapper.builder(
-          BouncingScrollWrapper.builder(context, router!),
-          maxWidth: 1200,
-          minWidth: 450,
-          defaultScale: true,
+        return ResponsiveBreakpoints.builder(
+          child: MaxWidthBox(
+            maxWidth: 1921,
+            child: ResponsiveScaledBox(
+              width: 450,
+              child: router!,
+            ),
+          ),
+          // child: ResponsiveScaledBox(width: 450, child: router!),
           breakpoints: [
-            const ResponsiveBreakpoint.resize(450, name: MOBILE),
-            const ResponsiveBreakpoint.resize(800, name: TABLET),
-            const ResponsiveBreakpoint.resize(1000, name: TABLET),
-            const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-            const ResponsiveBreakpoint.resize(2460, name: "4K"),
+            const Breakpoint(start: 0, end: 450, name: MOBILE),
+            const Breakpoint(start: 451, end: 800, name: TABLET),
+            const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
           ],
         );
       },

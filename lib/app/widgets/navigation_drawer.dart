@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unicorn/app/router/app_router.dart';
 import 'package:unicorn/app/views/complaint_history_page.dart';
 
 class NavDrawer extends StatefulWidget {
@@ -38,23 +40,16 @@ class _NavDrawerState extends State<NavDrawer> {
                   physics: const ClampingScrollPhysics(),
                   shrinkWrap: true,
                   children: [
-                    listItems(context, Icons.donut_small_rounded,
-                        'Session History', const DummyWidget()),
+                    listItems(Icons.donut_small_rounded, 'Session History'),
+                    listItems(Icons.error_outline, 'Complaint History',
+                        onPressed: () =>
+                            context.router.push(ComplaintHistoryRoute()),
+                        disabled: false),
                     listItems(
-                      context,
-                      Icons.error_outline,
-                      'Complaint History',
-                      const ComplaintHistoryPage(),
-                    ),
-                    listItems(context, Icons.currency_exchange_outlined,
-                        'Invoice History', const DummyWidget()),
-                    listItems(context, Icons.sell_outlined, 'Promo Offers',
-                        const DummyWidget()),
-                    listItems(context, Icons.language_outlined,
-                        'Open in Browser', const DummyWidget()),
-                    const MyContainer(
-                      onPressed: null,
-                    ),
+                        Icons.currency_exchange_outlined, 'Invoice History'),
+                    listItems(Icons.sell_outlined, 'Promo Offers'),
+                    listItems(Icons.language_outlined, 'Open in Browser'),
+                    const MyContainer(), // Add the MyContainer widget here
                   ],
                 ),
               ),
@@ -78,8 +73,8 @@ class _NavDrawerState extends State<NavDrawer> {
   }
 }
 
-listItems(
-    BuildContext context, IconData icon, String text, Widget destination) {
+listItems(IconData icon, String text,
+    {void Function()? onPressed, bool disabled = true}) {
   return Padding(
     padding: const EdgeInsets.only(top: 20, right: 40, left: 10),
     child: Material(
@@ -91,16 +86,11 @@ listItems(
             borderRadius: BorderRadius.all(Radius.circular(30))),
         child: InkWell(
           borderRadius: const BorderRadius.all(Radius.circular(30)),
-          onTap: destination.runtimeType != DummyWidget
-              ? () => Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => destination))
-              : null,
+          onTap: () => onPressed!(),
           child: ListTile(
             leading: Icon(
               icon,
-              color: destination.runtimeType != DummyWidget
-                  ? Colors.white
-                  : Colors.grey,
+              color: !disabled ? Colors.white : Colors.grey,
               size: 24,
             ),
             contentPadding: const EdgeInsets.only(left: 24),
@@ -109,12 +99,8 @@ listItems(
               text,
               style: GoogleFonts.roboto(
                 fontSize: 17.sp,
-                fontWeight: destination.runtimeType != DummyWidget
-                    ? FontWeight.w500
-                    : FontWeight.w300,
-                color: destination.runtimeType != DummyWidget
-                    ? Colors.white
-                    : Colors.grey,
+                fontWeight: !disabled ? FontWeight.w500 : FontWeight.w300,
+                color: !disabled ? Colors.white : Colors.grey,
                 letterSpacing: 0.5,
               ),
             ),

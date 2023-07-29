@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:unicorn/app/views/home_page.dart';
 import 'package:unicorn/app/views/invoice_page.dart';
 import 'package:unicorn/app/views/profile_page.dart';
@@ -16,6 +17,18 @@ class AppRouter extends _$AppRouter {
           AutoRoute(page: InvoiceRoute.page, path: 'invoicePage'),
           AutoRoute(page: ProfileRoute.page, path: 'profilePage'),
         ]),
-        AutoRoute(page: ComplaintHistoryRoute.page, path: '/complaintHistoryPage', initial: false)
+        CustomRoute(
+          page: ComplaintHistoryRoute.page,
+          path: '/complaintHistoryPage',
+          initial: false,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return SlideTransition(
+              position: animation.drive(
+                  Tween(begin: Offset(0, 1), end: Offset.zero)
+                      .chain(CurveTween(curve: Curves.ease))),
+              child: child,
+            );
+          },
+        )
       ];
 }

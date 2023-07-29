@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/router/app_router.dart';
 import 'package:unicorn/app/widgets/navigation_drawer.dart';
 import 'package:unicorn/app/widgets/app_bar_contents.dart';
@@ -41,7 +42,7 @@ class _InitialPageState extends State<InitialPage>
           appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            toolbarHeight: size.height * 0.3,
+            toolbarHeight: 283,
             title: title(context),
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(12),
