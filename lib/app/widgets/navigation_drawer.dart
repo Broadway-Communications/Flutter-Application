@@ -44,11 +44,7 @@ class _NavDrawerState extends State<NavDrawer> {
                         onPressed: () =>
                             context.router.push(const ComplaintHistoryRoute()),
                         disabled: false),
-                    listItems(
-                        Icons.currency_exchange_outlined, 'Invoice History',
-                        onPressed: () =>
-                            context.pushRoute(const InvoiceHistoryRoute()),
-                        disabled: false),
+                    listItems(Icons.currency_exchange_outlined, 'Invoice History'),
                     listItems(Icons.sell_outlined, 'Promo Offers'),
                     listItems(Icons.language_outlined, 'Open in Browser'),
                     const MyContainer(),

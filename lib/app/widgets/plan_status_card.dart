@@ -13,15 +13,15 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
     final size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.95,
-      decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(8)),
-          color: const Color.fromARGB(255, 246, 246, 253),
+      decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(8)),
+          color: Color.fromARGB(255, 246, 246, 253),
           boxShadow: [
             BoxShadow(
-              color: const Color.fromARGB(255, 175, 172, 214).withAlpha(255),
+              color: Color.fromARGB(255, 190, 190, 190),
               spreadRadius: 1,
               blurRadius: 1,
-              offset: const Offset(0, 3),
+              offset: Offset(0, 3),
             ),
           ]),
       child: Column(

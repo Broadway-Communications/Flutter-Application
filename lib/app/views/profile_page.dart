@@ -16,32 +16,11 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Center(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 18.0),
-          child: Container(
-            height: 610.h,
-            width: 420.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-              color: const Color.fromARGB(255, 248, 247, 252),
-              boxShadow: const [
-                BoxShadow(
-                  color: Color(0x3F000000),
-                  blurRadius: 4,
-                  offset: Offset(0, 4),
-                  spreadRadius: 0,
-                )
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 15.h,
-                ),
-                SizedBox(
-                  width: 500.w,
-                  height: 580.h,
+        child: Column(
+            children: [
+              SizedBox(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 12.0, bottom: 17.0),
                   child: ListView(
                     primary: false,
                     shrinkWrap: true,
@@ -56,11 +35,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           'Push Notification'),
                     ],
                   ),
-                )
-              ],
-            ),
-          ),
-        ),
+                ),
+              ),
+            ]),
       ),
     );
   }
@@ -75,16 +52,15 @@ class _ProfilePageState extends State<ProfilePage> {
           child: Icon(
             icon,
             color: Colors.black,
-            size: 36,
+            size: 27,
           ),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 3),
-        horizontalTitleGap: 7,
         title: Text(
           text,
           style: GoogleFonts.roboto(
               fontSize: 18.sp,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w600,
               color: const Color(0xFF000000).withAlpha(230),
               letterSpacing: 0.5),
         ),

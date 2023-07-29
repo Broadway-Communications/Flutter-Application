@@ -152,7 +152,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                                   MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
                                   if (states.contains(MaterialState.disabled)) {
-                                    return Colors.grey;
+                                    return Colors.grey.withAlpha(65);
                                   } else {
                                     return const Color(0xFF0F4C75);
                                   }
@@ -172,7 +172,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                                   MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
                                   if (states.contains(MaterialState.disabled)) {
-                                    return Colors.grey;
+                                    return Colors.grey.withAlpha(65);
                                   }
                                   return const Color(0xFF0F4C75);
                                 },

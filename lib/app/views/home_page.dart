@@ -91,9 +91,10 @@ class _HomePageState extends State<HomePage> {
                             transitionBuilder: (context, animation,
                                 secondaryAnimation, child) {
                               return SlideTransition(
-                                position: animation.drive(
-                                    Tween(begin: const Offset(0, 1), end: Offset.zero)
-                                        .chain(CurveTween(curve: Curves.ease))),
+                                position: animation.drive(Tween(
+                                        begin: const Offset(0, 1),
+                                        end: Offset.zero)
+                                    .chain(CurveTween(curve: Curves.ease))),
                                 child: child,
                               );
                             },
@@ -117,18 +118,10 @@ class _HomePageState extends State<HomePage> {
                         label: const Text('FAQ',
                             style: TextStyle(color: Colors.white)),
                         onPressed: null,
-                        style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                              if (states.contains(MaterialState.disabled)) {
-                                return Colors.grey;
-                              } else {
-                                return const Color(0xFF0F4C75);
-                              }
-                            },
-                          ),
-                        ),
+                        // style: ButtonStyle(
+                        //   backgroundColor: MaterialStateProperty.all<Color>(
+                        //       const Color(0xFF0F4C75)),
+                        // ),
                       ),
                     ),
                   ),

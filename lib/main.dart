@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
               child: router!,
             ),
           ),
-          // child: ResponsiveScaledBox(width: 450, child: router!),
           breakpoints: [
             const Breakpoint(start: 0, end: 450, name: MOBILE),
             const Breakpoint(start: 451, end: 800, name: TABLET),
