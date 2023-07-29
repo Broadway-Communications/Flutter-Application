@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unicorn/app/widgets/icon_card.dart';
 import 'package:unicorn/app/widgets/plan_status_card.dart';
 import 'package:unicorn/app/widgets/register_complaint_pop_up.dart';
@@ -36,8 +37,8 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 20, bottom: 10),
+            Padding(
+              padding: EdgeInsets.only(top: 20, bottom: 17.h),
               child: PlanStatusCard(),
             ),
             SizedBox(
@@ -61,7 +62,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 30.0),
+              padding: EdgeInsets.only(top: 25.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

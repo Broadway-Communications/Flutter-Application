@@ -88,14 +88,20 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
               Padding(
                 padding: const EdgeInsets.only(
                     left: 26, right: 26, bottom: 8, top: 12),
-                child: Column(children: [
-                  const Icon(
-                    Icons.sim_card,
-                    color: Color.fromARGB(255, 0, 110, 184),
-                    size: 45,
-                  ),
-                  Text('Prepaid', style: theme.textTheme.bodyLarge)
-                ]),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      const Icon(
+                        Icons.sim_card,
+                        color: Color.fromARGB(255, 0, 110, 184),
+                        size: 45,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 5),
+                        child:
+                            Text('Prepaid', style: theme.textTheme.bodyLarge),
+                      )
+                    ]),
               )
             ],
           ),
