@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+@RoutePage()
 class InvoiceHistoryPage extends StatelessWidget {
   const InvoiceHistoryPage({Key? key}) : super(key: key);
 
@@ -8,7 +10,7 @@ class InvoiceHistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, 
+        statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
@@ -44,7 +46,7 @@ class InvoiceHistoryPage extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  color: Colors.white, 
+                  color: Colors.white,
                   child: const Center(
                     child: Text('Your invoice history will appear here.'),
                   ),

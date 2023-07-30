@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() async {
   await ScreenUtil.ensureScreenSize();
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => const MyApp(),
   ));
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
         );
       },
       theme: ThemeData(
+        canvasColor: Theme.of(context).colorScheme.surfaceVariant,
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1F3660)),
         useMaterial3: true,
       ),

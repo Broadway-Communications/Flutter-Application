@@ -18,53 +18,52 @@ class _NavDrawerState extends State<NavDrawer> {
     return SizedBox(
       width: size.width * 0.85,
       height: size.height,
-      child: Drawer(
-        child: Container(
-          width: size.width * 0.43,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF132948), Color(0xFF3D579D)],
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp,
+      child: Container(
+        width: size.width * 0.43,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF132948), Color(0xFF3D579D)],
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            stops: [0.0, 1.0],
+            tileMode: TileMode.clamp,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            Expanded(
+              child: ListView(
+                physics: const ClampingScrollPhysics(),
+                shrinkWrap: true,
+                children: [
+                  listItems(Icons.donut_small_rounded, 'Session History'),
+                  listItems(Icons.error_outline, 'Complaint History',
+                      onPressed: () =>
+                          context.router.push(const ComplaintHistoryRoute()),
+                      disabled: false),
+                  listItems(
+                      Icons.currency_exchange_outlined, 'Invoice History'),
+                  listItems(Icons.sell_outlined, 'Promo Offers'),
+                  listItems(Icons.language_outlined, 'Open in Browser'),
+                  const MyContainer(),
+                ],
+              ),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Expanded(
-                child: ListView(
-                  physics: const ClampingScrollPhysics(),
-                  shrinkWrap: true,
-                  children: [
-                    listItems(Icons.donut_small_rounded, 'Session History'),
-                    listItems(Icons.error_outline, 'Complaint History',
-                        onPressed: () =>
-                            context.router.push(const ComplaintHistoryRoute()),
-                        disabled: false),
-                    listItems(Icons.currency_exchange_outlined, 'Invoice History'),
-                    listItems(Icons.sell_outlined, 'Promo Offers'),
-                    listItems(Icons.language_outlined, 'Open in Browser'),
-                    const MyContainer(),
-                  ],
+            Padding(
+              padding: const EdgeInsets.only(top: 10, right: 10, bottom: 10),
+              child: Text(
+                "v1.0.0-alpha+3",
+                style: GoogleFonts.roboto(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.grey,
+                  letterSpacing: 0.5,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10, right: 10, bottom: 10),
-                child: Text(
-                  "v1.0.0-alpha+3",
-                  style: GoogleFonts.roboto(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.grey,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
