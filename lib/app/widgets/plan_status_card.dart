@@ -108,7 +108,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
           Padding(
             padding: const EdgeInsets.only(top: 1, left: 17, bottom: 8),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: null,
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 253, 88, 82),
                   shape: RoundedRectangleBorder(

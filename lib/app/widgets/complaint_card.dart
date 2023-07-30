@@ -141,16 +141,16 @@ class _ComplaintCardState extends State<ComplaintCard> {
                     child: Center(
                       child: rating == -1
                           ? rateButton(context)
-                          : Column(
+                          : Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 RatingBarIndicator(
-                                    itemSize: 23,
+                                    itemSize: 30,
                                     rating: rating,
                                     itemBuilder: (context, index) {
-                                      return Icon(
+                                      return const Icon(
                                         Icons.star,
-                                        color: Colors.blue[900],
+                                        color: Color(0xFF3A5396),
                                       );
                                     }),
                                 rateButton(context)
@@ -165,9 +165,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
   }
 
   Widget rateButton(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          elevation: 0, backgroundColor: Colors.transparent),
+    return TextButton(
       onPressed: () => showDialog(
         context: context,
         builder: (context) {
@@ -177,22 +175,31 @@ class _ComplaintCardState extends State<ComplaintCard> {
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.17,
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            rating == -1
-                ? const Padding(
+        child: rating == -1
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Padding(
                     padding: EdgeInsets.only(right: 7),
-                    child: Icon(Icons.star_border_rounded),
-                  )
-                : const SizedBox.shrink(),
-            Text(
-              'Rate',
-              textAlign: TextAlign.end,
-              style: TextStyle(fontSize: 18.sp),
-            ),
-          ],
-        ),
+                    child: Icon(
+                      Icons.star_border,
+                      color: Color(0xFF3A5396),
+                    ),
+                  ),
+                  Text(
+                    'Rate',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 18.sp, color: const Color(0xFF3A5396)),
+                  ),
+                ],
+              )
+            : Text(
+                '$rating/5', // Display rating
+                textAlign: TextAlign.center,
+                style:
+                    TextStyle(fontSize: 18.sp, color: const Color(0xFF3A5396)),
+              ),
       ),
     );
   }
@@ -239,9 +246,9 @@ class _ComplaintCardState extends State<ComplaintCard> {
                 itemPadding: const EdgeInsets.all(2),
                 allowHalfRating: true,
                 itemBuilder: (context, index) {
-                  return Icon(
+                  return const Icon(
                     Icons.star,
-                    color: Colors.blue[900],
+                    color: Color(0xFF3A5396),
                   );
                 },
                 onRatingUpdate: (newRating) {
@@ -259,7 +266,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
-                      return const Color(0xFF0F4C75);
+                      return const Color(0xFF3A5396);
                     },
                   ),
                 ),
