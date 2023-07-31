@@ -40,8 +40,9 @@ class _NavDrawerState extends State<NavDrawer> {
                 children: [
                   listItems(Icons.donut_small_rounded, 'Session History'),
                   listItems(Icons.error_outline, 'Complaint History',
-                      onPressed: () =>
-                          context.router.push(const ComplaintHistoryRoute()),
+                      onPressed: () => context.router.push(
+                            const ComplaintHistoryRoute(),
+                          ),
                       disabled: false),
                   listItems(
                       Icons.currency_exchange_outlined, 'Invoice History'),
@@ -83,11 +84,7 @@ listItems(IconData icon, String text,
             borderRadius: BorderRadius.all(Radius.circular(30))),
         child: InkWell(
           borderRadius: const BorderRadius.all(Radius.circular(30)),
-          onTap: onPressed != null
-              ? () {
-                  onPressed();
-                }
-              : null,
+          onTap: onPressed,
           child: ListTile(
             leading: Icon(
               icon,

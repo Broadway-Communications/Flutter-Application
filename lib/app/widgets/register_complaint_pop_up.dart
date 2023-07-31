@@ -60,7 +60,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                   Text(
                     'Complaint MainType',
                     style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 17.sp),
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 15.sp),
                   ),
                   Theme(
                     data: Theme.of(context).copyWith(
@@ -72,7 +72,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                       isExpanded: true,
                       hint: Text(
                         'Select Complaint MainType',
-                        style: TextStyle(fontSize: 15.sp),
+                        style: TextStyle(fontSize: 17.sp),
                       ),
                       dropdownStyleData: DropdownStyleData(
                         width: size.width * 0.81,
@@ -101,7 +101,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                   Text(
                     'Complaint SubType',
                     style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 17.sp),
+                        TextStyle(fontWeight: FontWeight.w500, fontSize: 15.sp),
                   ),
                   Theme(
                     data: Theme.of(context).copyWith(
@@ -111,7 +111,10 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                             seedColor: const Color(0xFF1F3660))),
                     child: DropdownButton2(
                       isExpanded: true,
-                      hint: const Text('Select Complaint SubType'),
+                      hint: Text(
+                        'Select Complaint SubType',
+                        style: TextStyle(fontSize: 17.sp),
+                      ),
                       value: _subType,
                       onChanged: (String? newValue) {
                         setState(() {
@@ -139,7 +142,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
               const SizedBox(height: 15.0),
               Text(
                 'Description',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 19.sp),
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15.sp),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.85,
@@ -156,6 +159,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                     maxLines: null,
                     decoration: InputDecoration(
                       hintText: 'Enter your complaint details',
+                      hintStyle: TextStyle(fontSize: 17.sp),
                       counterText: '${_description!.length}/2000',
                       border: const UnderlineInputBorder(),
                     ),

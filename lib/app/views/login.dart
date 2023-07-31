@@ -163,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                                           predicate: (route) => false,
                                         ),
                                     child: SizedBox(
-                                      width: size.width * 0.8,
+                                      width: size.width,
                                       height: size.height * 0.074,
                                       child: Center(
                                         child: Text(

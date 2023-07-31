@@ -29,7 +29,7 @@ class _ComplaintCardState extends State<ComplaintCard> {
   List<Map<String, Color>> status = [
     {"Closed": const Color(0xFF83E360)},
     {"Open": Colors.red},
-    {"In Progress": Colors.blueAccent},
+    {"In Progress": Colors.blue[900]!},
   ];
   double rating = -1;
   var rng = Random();

@@ -15,7 +15,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
       width: size.width * 0.95,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(8)),
-          color: Color.fromARGB(255, 246, 246, 253),
+          color: Colors.white,
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(255, 190, 190, 190),
