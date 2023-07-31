@@ -34,8 +34,8 @@ Widget title(BuildContext context) {
                 borderRadius: BorderRadius.all(Radius.circular(120)),
               ),
               child: ClipOval(
-                child: Image.network(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKWxIwmVa8QmOHFoD75qJuEJh4O6dVc7-utA&usqp=CAU',
+                child: Image.asset(
+                  'assets/logo.png',
                   height: 48,
                   width: 48,
                   fit: BoxFit.fill,
@@ -82,9 +82,7 @@ Widget title(BuildContext context) {
                   child: CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white,
-                    backgroundImage: NetworkImage(
-                      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-                    ),
+                    backgroundImage: AssetImage('assets/hitler.png'),
                   ),
                 )
               ],

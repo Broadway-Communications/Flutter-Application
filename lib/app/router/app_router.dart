@@ -38,12 +38,12 @@ class AppRouter extends _$AppRouter {
             AutoRoute(page: InvoiceRoute.page, path: 'invoicePage'),
             AutoRoute(page: ProfileRoute.page, path: 'profilePage'),
           ],
-          durationInMilliseconds: 500,
+          durationInMilliseconds: 400,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return SlideTransition(
               position: animation.drive(
-                  Tween(begin: const Offset(1, 0), end: Offset.zero)
-                      .chain(CurveTween(curve: Curves.easeIn))),
+                  Tween(begin: const Offset(1.5, 0), end: Offset.zero)
+                      .chain(CurveTween(curve: Curves.bounceIn))),
               child: child,
             );
           },
