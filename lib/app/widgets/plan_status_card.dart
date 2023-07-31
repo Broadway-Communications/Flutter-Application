@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlanStatusCard extends StatefulWidget {
   const PlanStatusCard({super.key});
@@ -13,9 +14,9 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
     final size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.95,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(8)),
-          color: Colors.white,
+          color: Colors.white.withOpacity(0.89),
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(255, 190, 190, 190),
@@ -38,21 +39,29 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                 maxLines: 3,
                 text: TextSpan(
                   text: '12 Nov 2021 03:28\n',
-                  style: theme.textTheme.titleLarge!.copyWith(fontSize: 24),
+                  style: theme.textTheme.titleLarge!.copyWith(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 0.5),
                   children: [
                     const WidgetSpan(
                         child: SizedBox(
                       height: 25,
                     )),
-                    TextSpan(text: 'PM\n', style: theme.textTheme.titleLarge),
+                    TextSpan(
+                        text: 'PM\n',
+                        style: theme.textTheme.titleLarge!.copyWith(
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.5)),
                     const WidgetSpan(
                         child: SizedBox(
                       height: 23,
                     )),
                     TextSpan(
                       text: 'Expiry Date',
-                      style: theme.textTheme.bodyMedium!
-                          .copyWith(color: Colors.black),
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w400),
                     )
                   ],
                 ),
@@ -93,7 +102,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                     children: [
                       const Icon(
                         Icons.sim_card,
-                        color: Color.fromARGB(255, 0, 110, 184),
+                        color: const Color(0xFF3B5599),
                         size: 45,
                       ),
                       Padding(

@@ -23,7 +23,7 @@ class _IconCardState extends State<IconCard> {
         width: size.width * 0.28,
         padding: const EdgeInsets.all(10).copyWith(bottom: 5),
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 245, 245, 255),
+          color: Color.alphaBlend(Colors.black.withOpacity(0.04), Colors.white),
           borderRadius: BorderRadius.circular(12),
           boxShadow: const [
             BoxShadow(
@@ -58,7 +58,7 @@ class _IconCardState extends State<IconCard> {
                 child: Text(
                   widget.text,
                   style: const TextStyle(
-                    color: Color.fromARGB(255, 24, 114, 173),
+                    color: Color.fromARGB(255, 37, 68, 134),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
