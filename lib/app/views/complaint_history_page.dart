@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:auto_route/annotations.dart';
@@ -56,7 +55,7 @@ class ComplaintHistoryPage extends StatelessWidget {
           body: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: 10.0),
+                padding: const EdgeInsets.only(bottom: 15.0),
                 child: AppBar(
                   backgroundColor: Colors.transparent,
                   surfaceTintColor: Colors.transparent,
@@ -100,9 +99,6 @@ class ComplaintHistoryPage extends StatelessWidget {
                                 description: complaint['description'] as String,
                                 dateAdded: complaint['dateAdded'] as String,
                                 index: Random().nextInt(3),
-                                // rating: complaint['rating'] != null
-                                //     ? complaint['rating'] as int
-                                //     : null,
                               );
                             }).toList(),
                           ),

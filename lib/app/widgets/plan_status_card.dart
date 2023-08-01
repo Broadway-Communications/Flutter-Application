@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unicorn/app/router/app_router.dart';
 
 class PlanStatusCard extends StatefulWidget {
   const PlanStatusCard({super.key});
@@ -15,9 +17,9 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
     return Container(
       width: size.width * 0.95,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
           color: Colors.white.withOpacity(0.89),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(255, 190, 190, 190),
               spreadRadius: 1,
@@ -102,7 +104,7 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
                     children: [
                       const Icon(
                         Icons.sim_card,
-                        color: const Color(0xFF3B5599),
+                        color: Color(0xFF3B5599),
                         size: 45,
                       ),
                       Padding(
@@ -117,7 +119,9 @@ class _PlanStatusCardState extends State<PlanStatusCard> {
           Padding(
             padding: const EdgeInsets.only(top: 1, left: 17, bottom: 8),
             child: ElevatedButton(
-              onPressed: null,
+              onPressed: () {
+                context.pushRoute(const CheckoutRoute());
+              },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 253, 88, 82),
                   shape: RoundedRectangleBorder(

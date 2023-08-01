@@ -21,10 +21,10 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Container(
           height: size.height,
           width: size.width,
-          padding: EdgeInsets.symmetric(vertical: 12),
+          padding: const EdgeInsets.symmetric(vertical: 12),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
             boxShadow: const [
               BoxShadow(
                 color: Color(0x3F000000),
@@ -39,8 +39,6 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               children: [
                 ListView(
-                  // itemExtent: 81.h,
-                  padding: EdgeInsets.all(0),
                   shrinkWrap: true,
                   children: [
                     listItems(Icons.email_outlined, 'Update Email'),
@@ -67,7 +65,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: ListTile(
             leading: CircleAvatar(
               radius: 43,
-              backgroundColor: Color(0xFFB4BBEA),
+              backgroundColor: const Color(0xFFB4BBEA),
               child: Icon(
                 icon,
                 color: Colors.black,
@@ -85,7 +83,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
-        Divider(
+        const Divider(
           color: Colors.grey,
         )
       ],

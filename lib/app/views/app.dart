@@ -38,7 +38,7 @@ class _InitialPageState extends State<InitialPage>
         final tabsRouter = AutoTabsRouter.of(context);
         final size = MediaQuery.of(context).size;
         return Scaffold(
-          backgroundColor: Color(0xFFE8EAF9),
+          backgroundColor: const Color(0xFFE8EAF9),
           appBar: AppBar(
             automaticallyImplyLeading: false,
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,

@@ -179,24 +179,24 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                               MaterialStateProperty.resolveWith<Color>(
                             (Set<MaterialState> states) {
                               if (states.contains(MaterialState.disabled)) {
-                                return Colors.grey;
+                                return Colors.grey.withAlpha(65);
                               } else {
                                 return const Color(0xFF0F4C75);
                               }
                             },
                           ),
                         ),
-                        child: SizedBox(
-                          width: size.width * 0.25,
-                          child: Text(
-                            'Submit',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 17.sp,
-                              color: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.all(11.0),
+                            child: Text(
+                              'Submit',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 17.sp,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
                       ),
                       TextButton(
                         onPressed: () =>
@@ -206,7 +206,7 @@ class RegisterComplaintPopUpState extends State<RegisterComplaintPopUp> {
                               MaterialStateProperty.resolveWith<Color>(
                             (Set<MaterialState> states) {
                               if (states.contains(MaterialState.disabled)) {
-                                return Colors.grey;
+                                return Colors.grey.withAlpha(65);
                               }
                               return const Color(0xFF0F4C75);
                             },

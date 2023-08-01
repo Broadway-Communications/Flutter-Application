@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
         width: 490.w,
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             height: size.height,
             child: Align(
               alignment: Alignment(0.w, 0.9.h),

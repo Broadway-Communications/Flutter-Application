@@ -21,6 +21,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const InitialPage(),
       );
     },
+    CheckoutRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CheckoutPage(),
+      );
+    },
     ComplaintHistoryRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -76,6 +82,20 @@ class InitialRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'InitialRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [CheckoutPage]
+class CheckoutRoute extends PageRouteInfo<void> {
+  const CheckoutRoute({List<PageRouteInfo>? children})
+      : super(
+          CheckoutRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CheckoutRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

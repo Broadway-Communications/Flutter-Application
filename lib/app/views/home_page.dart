@@ -61,72 +61,68 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 25.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: SizedBox(
-                      width: 152.0,
-                      height: 50.0,
-                      child: ElevatedButton.icon(
-                        icon: const Icon(Icons.error_outline,
-                            color: Colors.white),
-                        label: const Text('Complaint',
-                            style: TextStyle(color: Colors.white)),
-                        onPressed: () {
-                          showGeneralDialog(
-                            context: context,
-                            barrierDismissible: true,
-                            barrierLabel: "Complaint",
-                            barrierColor: Colors.black.withOpacity(0.4),
-                            transitionDuration:
-                                const Duration(milliseconds: 300),
-                            pageBuilder:
-                                (context, animation, secondaryAnimation) {
-                              return const RegisterComplaintPopUp();
-                            },
-                            transitionBuilder: (context, animation,
-                                secondaryAnimation, child) {
-                              return SlideTransition(
-                                position: animation.drive(Tween(
-                                        begin: const Offset(0, 1),
-                                        end: Offset.zero)
-                                    .chain(CurveTween(curve: Curves.ease))),
-                                child: child,
-                              );
-                            },
-                          );
-                        },
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color(0xFF294275)),
-                        ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: SizedBox(
+                    width: 152.0,
+                    height: 50.0,
+                    child: ElevatedButton.icon(
+                      icon:
+                          const Icon(Icons.error_outline, color: Colors.white),
+                      label: const Text('Complaint',
+                          style: TextStyle(color: Colors.white)),
+                      onPressed: () {
+                        showGeneralDialog(
+                          context: context,
+                          barrierDismissible: true,
+                          barrierLabel: "Complaint",
+                          barrierColor: Colors.black.withOpacity(0.4),
+                          transitionDuration: const Duration(milliseconds: 300),
+                          pageBuilder:
+                              (context, animation, secondaryAnimation) {
+                            return const RegisterComplaintPopUp();
+                          },
+                          transitionBuilder:
+                              (context, animation, secondaryAnimation, child) {
+                            return SlideTransition(
+                              position: animation.drive(Tween(
+                                      begin: const Offset(0, 1),
+                                      end: Offset.zero)
+                                  .chain(CurveTween(curve: Curves.ease))),
+                              child: child,
+                            );
+                          },
+                        );
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            const Color(0xFF0F4C75)),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: SizedBox(
-                      width: 115.0,
-                      height: 50.0,
-                      child: ElevatedButton.icon(
-                        icon: const Icon(Icons.question_answer_outlined,
-                            color: Colors.white),
-                        label: const Text('FAQ',
-                            style: TextStyle(color: Colors.white)),
-                        onPressed: null,
-                        // style: ButtonStyle(
-                        //   backgroundColor: MaterialStateProperty.all<Color>(
-                        //       const Color(0xFF0F4C75)),
-                        // ),
-                      ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: SizedBox(
+                    width: 115.0,
+                    height: 50.0,
+                    child: ElevatedButton.icon(
+                      icon: const Icon(Icons.question_answer_outlined,
+                          color: Colors.white),
+                      label: const Text('FAQ',
+                          style: TextStyle(color: Colors.white)),
+                      onPressed: null,
+                      // style: ButtonStyle(
+                      //   backgroundColor: MaterialStateProperty.all<Color>(
+                      //       const Color(0xFF0F4C75)),
+                      // ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),
