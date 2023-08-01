@@ -18,42 +18,38 @@ class _ProfilePageState extends State<ProfilePage> {
     final size = MediaQuery.of(context).size;
     return Align(
       alignment: Alignment.topCenter,
-      child: Container(
-          height: size.height,
-          width: size.width,
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: const Color.fromARGB(255, 255, 255, 255),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x3F000000),
-                blurRadius: 4,
-                offset: Offset(0, 4),
-                spreadRadius: 0,
-              )
-            ],
-          ),
-          child: ResponsiveScaledBox(
+      child: ResponsiveScaledBox(
+        width: size.width * 1.17,
+        child: Container(
+            height: size.height,
             width: size.width * 1.17,
-            child: Column(
-              children: [
-                ListView(
-                  shrinkWrap: true,
-                  children: [
-                    listItems(Icons.email_outlined, 'Update Email'),
-                    listItems(Icons.phone_android, 'Update Mobile'),
-                    listItems(Icons.devices, 'Update Mac'),
-                    listItems(Icons.edit_location_outlined, 'Update Address'),
-                    listItems(Icons.lock_outline, 'Change Password'),
-                    listItems(Icons.location_on_outlined, 'My Geo Location'),
-                    listItems(Icons.notifications_active_outlined,
-                        'Push Notification'),
-                  ],
-                ),
+            padding: const EdgeInsets.symmetric(vertical: 25),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              color: const Color.fromARGB(255, 255, 255, 255),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x3F000000),
+                  blurRadius: 4,
+                  offset: Offset(0, 4),
+                  spreadRadius: 0,
+                )
               ],
             ),
-          )),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                listItems(Icons.email_outlined, 'Update Email'),
+                listItems(Icons.phone_android, 'Update Mobile'),
+                listItems(Icons.devices, 'Update Mac'),
+                listItems(Icons.edit_location_outlined, 'Update Address'),
+                listItems(Icons.lock_outline, 'Change Password'),
+                listItems(Icons.location_on_outlined, 'My Geo Location'),
+                listItems(
+                    Icons.notifications_active_outlined, 'Push Notification'),
+              ],
+            )),
+      ),
     );
   }
 
@@ -83,8 +79,11 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
-        const Divider(
-          color: Colors.grey,
+        Divider(
+          color: Colors.grey.withOpacity(0.23),
+          thickness: 2,
+          indent: 22.w,
+          endIndent: 34.w,
         )
       ],
     );

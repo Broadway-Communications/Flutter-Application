@@ -111,10 +111,9 @@ class _SplashScreenState extends State<SplashScreen>
                         Text(
                           "Broadway\nCommunication",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.lobsterTwo(
-                            letterSpacing: 5.sp,
-                            fontSize: 47.sp,
-                            fontWeight: FontWeight.w900,
+                          style: GoogleFonts.ptSerif(
+                            fontSize: 42.sp,
+                            fontWeight: FontWeight.w600,
                             color: Colors.white,
                           ),
                         ),
