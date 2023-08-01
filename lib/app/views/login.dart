@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                                 fontWeight: FontWeight.w600),
                           ),
                           Text(
-                            'Sign in To Continue',
+                            'Sign in to continue',
                             style: TextStyle(
                                 fontSize: 18.sp,
                                 wordSpacing: 0.5.sp,
