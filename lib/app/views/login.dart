@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                           return Column(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0)
+                                padding: const EdgeInsets.all(0.0)
                                     .copyWith(bottom: 12),
                                 child: Container(
                                   // height: 76.h,
@@ -115,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.all(8.0).copyWith(top: 12),
+                                    const EdgeInsets.all(0.0).copyWith(top: 12),
                                 child: Container(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 1),
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.all(8.0).copyWith(top: 23),
+                                    const EdgeInsets.all(0.0).copyWith(top: 23),
                                 child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                       elevation: 2,
@@ -162,9 +162,8 @@ class _LoginPageState extends State<LoginPage> {
                                           const InitialRoute(),
                                           predicate: (route) => false,
                                         ),
-                                    child: SizedBox(
-                                      width: size.width,
-                                      height: size.height * 0.074,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
                                       child: Center(
                                         child: Text(
                                           'Login',
@@ -175,6 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     )),
                               ),
+                              
                               TextButton(
                                   onPressed: () {},
                                   child: Text(

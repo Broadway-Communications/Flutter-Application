@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 Widget tab(String text) {
   return Tab(
@@ -37,7 +36,7 @@ Widget title(BuildContext context) {
               child: ClipOval(
                   child: Image.asset(
                 'assets/images/logo.png',
-                fit: BoxFit.fill,
+                fit: BoxFit.scaleDown,
                 height: 48,
                 width: 48,
               )),
