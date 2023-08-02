@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 Widget tab(String text) {
   return Tab(
@@ -34,13 +35,12 @@ Widget title(BuildContext context) {
                 borderRadius: BorderRadius.all(Radius.circular(120)),
               ),
               child: ClipOval(
-                child: Image.asset(
-                  'assets/logo.png',
-                  height: 48,
-                  width: 48,
-                  fit: BoxFit.fill,
-                ),
-              ),
+                  child: Image.asset(
+                'assets/images/logo.png',
+                fit: BoxFit.fill,
+                height: 48,
+                width: 48,
+              )),
             ),
           ),
           const Padding(

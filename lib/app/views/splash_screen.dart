@@ -25,23 +25,23 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     delayedTransition();
     controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 900))
+        vsync: this, duration: const Duration(milliseconds: 1800))
       ..repeat(reverse: true);
     animation =
-        Tween<double>(begin: 0, end: 180 * (3.14 / 180)).animate(controller);
+        Tween<double>(begin: 0, end: 360 * (3.14 / 180)).animate(controller);
     opacity = 0;
 
     controller.forward(from: 0);
   }
 
   Future<dynamic> delayedTransition() async {
-    await Future.delayed(const Duration(milliseconds: 50));
+    await Future.delayed(const Duration(milliseconds: 1000));
     setState(() {
       opacity = opacity == 0 ? 1 : 0;
     });
     await Future.delayed(const Duration(milliseconds: 2000));
     context.router.pushAndPopUntil(const LoginRoute(),
-        predicate: (Route<dynamic> route) => true);
+        predicate: (Route<dynamic> route) => false);
   }
 
   @override
@@ -68,17 +68,23 @@ class _SplashScreenState extends State<SplashScreen>
           child: Center(
               child: Stack(
             children: [
-              // AnimatedBuilder(
-              //   builder: (context, child) {
-              //     return Transform.rotate(
-              //       angle: animation.value,
-              //       child: Align(
-              //         alignment: const Alignment(0, 0),
-              //         child: Image.asset('assets/oroboros.jpg'),
-              //       ),
-              //     );
-              //   },
-              //   animation: animation,
+              // Positioned(
+              //   top: 10,
+              //   bottom: 10,
+              //   right: 20,
+              //   left: 20,
+              //   child: AnimatedBuilder(
+              //     builder: (context, child) {
+              //       return Transform.rotate(
+              //         angle: animation.value,
+              //         child: Align(
+              //           alignment: const Alignment(0, 0),
+              //           child: Image.asset('assets/images/logo.png'),
+              //         ),
+              //       );
+              //     },
+              //     animation: animation,
+              //   ),
               // ),
               Positioned(
                 top: 20,
@@ -91,8 +97,16 @@ class _SplashScreenState extends State<SplashScreen>
                     duration: const Duration(milliseconds: 1000),
                     opacity: opacity,
                     curve: Curves.ease,
-                    child: Stack(
+                    child: Column(
                       children: [
+                        SizedBox(
+                          height: 240.h,
+                        ),
+                        Image.asset(
+                          'assets/images/logo.png',
+                          height: 128.w,
+                          width: 128.w,
+                        ),
                         // Text(
                         //   "Broadway Communication",
                         //   textAlign: TextAlign.center,
